@@ -1,2 +1,2 @@
-# Echoes-of-the-Tides
-Unity project for "Echoes of the Tides" VR 360 Video experience.
+# Echoes of the Tides
+ VR and 360 video experience. A Unity project.
