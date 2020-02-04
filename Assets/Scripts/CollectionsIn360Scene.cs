@@ -8,7 +8,7 @@ public class CollectionsIn360Scene : MonoBehaviour
 
     //Artifact collection lists
     public List<Transform> artifactsPlaced = new List<Transform>(); //Artifacts placed on ground
-    private readonly List<GameObject> artifacts = new List<GameObject>();
+    private List<GameObject> artifacts = new List<GameObject>();
     public List<string> underWaterCollections = new List<string>();
     public List<string> beachRecCollections = new List<string>();
 
@@ -133,12 +133,12 @@ public class CollectionsIn360Scene : MonoBehaviour
 
                         if (bonfire == false && woodAndLighter == true && beerAndWood == true)
                         {
-                            beachRecCollections.Add("Bonfire");
+                            underWaterCollections.Add("Bonfire");
                             bonfire = true;
                         }
                         else if (bonfire == true && (woodAndLighter == false || beerAndWood == false))
                         {
-                            beachRecCollections.Remove("Bonfire");
+                            underWaterCollections.Remove("Bonfire");
                             bonfire = false;
                         }
 
@@ -181,12 +181,12 @@ public class CollectionsIn360Scene : MonoBehaviour
 
                         if (bonfire == false && lighterAndBeer == true && beerAndWood == true)
                         {
-                            beachRecCollections.Add("Bonfire");
+                            underWaterCollections.Add("Bonfire");
                             bonfire = true;
                         }
                         else if (bonfire == true && (lighterAndBeer == false || beerAndWood == false))
                         {
-                            beachRecCollections.Remove("Bonfire");
+                            underWaterCollections.Remove("Bonfire");
                             bonfire = false;
                         }
 
@@ -223,12 +223,12 @@ public class CollectionsIn360Scene : MonoBehaviour
 
                         if (bonfire == false && woodAndLighter == true && lighterAndBeer == true)
                         {
-                            beachRecCollections.Add("Bonfire");
+                            underWaterCollections.Add("Bonfire");
                             bonfire = true;
                         }
                         else if (bonfire == true && (woodAndLighter == false || lighterAndBeer == false))
                         {
-                            beachRecCollections.Remove("Bonfire");
+                            underWaterCollections.Remove("Bonfire");
                             bonfire = false;
                         }
 
