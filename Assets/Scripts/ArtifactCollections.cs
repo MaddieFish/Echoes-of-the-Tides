@@ -113,7 +113,12 @@ void OnCollisionExit (Collision col)
     //Move to different script eventually
     void InstantiatePortal()
     {
-        if (underwaterCollections.Count > beachRecCollections.Count)
+        if (underwaterCollections.Count > 1)
+        {
+            
+        }
+
+        if (beachRecCollections.Count > 1)
         {
 
         }

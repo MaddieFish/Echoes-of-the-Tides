@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Artifact
   - Ground
+  - Fish
+  - Lighter
+  - Wood
+  - Beer
   layers:
   - Default
   - TransparentFX

@@ -37,6 +37,24 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        var inputDevices = new List<InputDevice>();
+        InputDevices.GetDevices(inputDevices);
+
+        foreach (var device in inputDevices)
+        {
+            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left))
+            {
+                Debug.Log("Found Left Controller");
+                LeftController = device;
+            }
+
+            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right))
+            {
+                Debug.Log("Found Right Controller");
+                RightController = device;
+            }
+            //Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, deviceChar.ToString()));
+        }
     }
 
     // Update is called once per frame

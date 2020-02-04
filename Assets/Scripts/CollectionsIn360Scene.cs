@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class CollectionsIn360Scene : MonoBehaviour
 {
-    public GameObject[] artifact;
+    //public GameObject[] artifact;
 
-    public List<Transform> artifactsPlaced = new List<Transform>();
+    //Artifact collection lists
+    public List<Transform> artifactsPlaced = new List<Transform>(); //Artifacts placed on ground
+    private List<GameObject> artifacts = new List<GameObject>();
     public List<string> underWaterCollections = new List<string>();
+    public List<string> beachRecCollections = new List<string>();
 
     public float triggerDist = 0.5f;
+
+    //Choose scene
+    public bool underWaterScene;
+    public bool beachRecScene;
+
 
     //2 combo collections
     public bool strangledFish = false;
@@ -25,14 +33,7 @@ public class CollectionsIn360Scene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        artifact = GameObject.FindGameObjectsWithTag("Artifact");
-
-        /*
-        for (int i = 0; i <= artifact.Length; i++)
-        {
-            underWaterCollections = artifact[i].GetComponent<ArtifactObject>().underWaterCollections;
-        }
-        */
+        //artifact = GameObject.FindGameObjectsWithTag("Artifact");
 
     }
 
@@ -49,6 +50,8 @@ public class CollectionsIn360Scene : MonoBehaviour
         if (col.gameObject.CompareTag("Artifact") == true)
         {
             artifactsPlaced.Add(col.transform);
+            artifacts.Add(col.gameObject);
+
             //print("You collected " + col.transform.name);
         }
 
@@ -56,22 +59,38 @@ public class CollectionsIn360Scene : MonoBehaviour
     void OnCollisionExit(Collision col)
     {
         artifactsPlaced.Remove(col.transform);
+        artifacts.Remove(col.gameObject);
         //print("You removed the " + col.transform.name);
+    }
+
+    void SpawnComboObject()
+    {
+        if (sunkenShip == true && underWaterScene == true)
+        {
+
+        }
+
+        if (bonfire == true && beachRecScene == true)
+        {
+
+        }
     }
 
     void FindObjectsProximity()
     {
-
-        foreach (Transform otherArtifact2 in artifactsPlaced)
-        {
+        for (int i = 0; i < artifacts.Count; i++)
+        {  
+     
             foreach (Transform otherArtifact in artifactsPlaced)
             {
-                if (otherArtifact && otherArtifact2.name != otherArtifact2.name)
-                {
-                    float dist = Vector3.Distance(otherArtifact.position, transform.position);
-                    print(otherArtifact2.name + " Distance to " + otherArtifact.name + ": " + dist);
+                print(artifacts[i].name + " " + otherArtifact.name);
 
-                    if (dist <= triggerDist && otherArtifact2.name == "Fish")
+                if (otherArtifact && otherArtifact.name != artifacts[i].name)
+                {
+                    float dist = Vector3.Distance(otherArtifact.position, artifacts[i].transform.position);
+                    print(artifacts[i].name + " Distance to " + otherArtifact.name + ": " + dist);
+
+                    if (dist <= triggerDist && artifacts[i].name == "Fish")
                     {
                         if (otherArtifact.name == "Wood" && sunkenShip == false)
                         {
@@ -102,7 +121,7 @@ public class CollectionsIn360Scene : MonoBehaviour
                         }
                     }
 
-                    if (dist <= triggerDist && otherArtifact2.name == "Wood")
+                    if (dist <= triggerDist && artifacts[i].name == "Wood")
                     {
                         if (otherArtifact.name == "Fish" && sunkenShip == false)
                         {
@@ -150,7 +169,7 @@ public class CollectionsIn360Scene : MonoBehaviour
                         }
                     }
 
-                    if (dist <= triggerDist && otherArtifact2.name == "Beer")
+                    if (dist <= triggerDist && artifacts[i].name == "Beer")
                     {
                         if (otherArtifact.name == "Fish" && strangledFish == false)
                         {
@@ -198,7 +217,7 @@ public class CollectionsIn360Scene : MonoBehaviour
                         }
                     }
 
-                    if (dist <= triggerDist && otherArtifact2.name == "Lighter")
+                    if (dist <= triggerDist && artifacts[i].name == "Lighter")
                     {
                         /// Bonfire combo
 
@@ -239,6 +258,9 @@ public class CollectionsIn360Scene : MonoBehaviour
 
             }
         }
-
     }
+
+      
+
+
 }
