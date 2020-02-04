@@ -2881,7 +2881,7 @@ PrefabInstance:
     - target: {fileID: 4396935758784443015, guid: 10484f15ec6a39543ad08a8de621625d,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4628993801714269263, guid: 10484f15ec6a39543ad08a8de621625d,
         type: 3}
@@ -2902,6 +2902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.339
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277494574757924150, guid: 10484f15ec6a39543ad08a8de621625d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6277494575077435612, guid: 10484f15ec6a39543ad08a8de621625d,
         type: 3}
@@ -4547,7 +4552,7 @@ MonoBehaviour:
   moveSpeed: 3
   rotSpeed: 200
   centreEye: {fileID: 0}
-  pObject: {fileID: 0}
+  pObject: {fileID: 1722201098}
   rb: {fileID: 0}
   speedH: 2
   speedV: 2
@@ -5545,7 +5550,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988792933}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4c1f120688acba84ca18ba83d87b1b7f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3f84a4c0a58796747b68b1a8b2f4a1a6, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -5579,11 +5584,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988792933}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 9dd8d536c73bace419a180746954188a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3f84a4c0a58796747b68b1a8b2f4a1a6, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 5c875d82c1d6d8b4b854e6135da73bbe, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 4b2491b90b63d5e41921e5c0d0fa4062, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -5600,7 +5605,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1

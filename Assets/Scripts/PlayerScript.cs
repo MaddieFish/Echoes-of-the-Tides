@@ -62,25 +62,27 @@ public class PlayerScript : MonoBehaviour
     {
         if (oculusControllerIntegration == true)
         {
-            OculusJoystickMovement();
+            //OculusJoystickMovement();
         }
 
         if (xrController == true)
         {
-            XRJoystickMOvement();
+            XRJoystickMovement();
         }
 
         if (keyboardControls == true)
         {
-            KeyboardMovement();
+            //KeyboardMovement();
         }
 
         if (mouseCameraRotation == true)
         {
-            MouseCameraRotation();
+            //MouseCameraRotation();
         }
 
     }
+
+    /*
 
     void OculusJoystickMovement()
     {
@@ -94,8 +96,9 @@ public class PlayerScript : MonoBehaviour
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time
             .deltaTime);
     }
+    */
 
-    void XRJoystickMOvement()
+    void XRJoystickMovement()
     {
         Vector2 axisValues;
 
