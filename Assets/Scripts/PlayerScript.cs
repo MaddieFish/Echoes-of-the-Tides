@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class PlayerScript : MonoBehaviour
 
     public Rigidbody rb;
 
+    //XR Controller Devuces
+    public InputDevice LeftController;
+    public InputDevice RightController;
+
     //Test Camera Rotation
     public float speedH = 2.0f;
     public float speedV = 2.0f;
@@ -23,8 +28,8 @@ public class PlayerScript : MonoBehaviour
     private float pitch = 0.0f;
 
     //Toggle control types
-    public bool VRController;
-
+    public bool oculusControllerIntegration;
+    public bool xrController;
     public bool keyboardControls;
     public bool mouseCameraRotation;
 
@@ -37,12 +42,17 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (VRController == true)
+        if (oculusControllerIntegration == true)
         {
             OculusJoystickMovement();
         }
 
-        if(keyboardControls == true)
+        if (xrController == true)
+        {
+            XRJoystickMOvement();
+        }
+
+        if (keyboardControls == true)
         {
             KeyboardMovement();
         }
@@ -65,6 +75,22 @@ public class PlayerScript : MonoBehaviour
 
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time
             .deltaTime);
+    }
+
+    void XRJoystickMOvement()
+    {
+        Vector2 axisValues;
+
+        RightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValues);
+        print(axisValues);
+
+        //transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
+        transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
+        transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
+
+        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time
+            .deltaTime);
+
     }
 
     //For ingame testing without a headset
