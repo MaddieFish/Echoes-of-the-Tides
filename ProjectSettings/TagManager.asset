@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Artifact
-  - Ground
-  - Fish
-  - Lighter
-  - Wood
-  - Beer
+  tags: []
   layers:
   - Default
   - TransparentFX
