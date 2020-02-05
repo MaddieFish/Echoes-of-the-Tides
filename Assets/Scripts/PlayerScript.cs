@@ -102,8 +102,12 @@ public class PlayerScript : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
         transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
 
-        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time
-            .deltaTime);
+        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
+
+        /*
+         transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
+        transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed); 
+         */
 
     }
 
@@ -120,12 +124,11 @@ public class PlayerScript : MonoBehaviour
         */
 
         //Movement through transform
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed);
+        //transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed)
 
-        /*
         transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
         transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed);
-        */
+
     }
 
     void MouseCameraRotation()
