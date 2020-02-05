@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 0.5
+  triggerDist: 1
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 0.5
+  triggerDist: 1
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -417,7 +417,6 @@ GameObject:
   - component: {fileID: 6277494574757924150}
   - component: {fileID: 6277494574757924145}
   - component: {fileID: 6277494574757924144}
-  - component: {fileID: 4396935758784443015}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Artifact
@@ -498,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 0.5
+  triggerDist: 1
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -517,10 +516,10 @@ BoxCollider:
   m_GameObject: {fileID: 6277494574757924147}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.008368749, y: 0.010406994, z: 0.02519151}
-  m_Center: {x: -0.00036271775, y: 0.00023221823, z: -0.00029094963}
+  m_Size: {x: 0.009034823, y: 0.01031183, z: 0.025857592}
+  m_Center: {x: -0.00002968237, y: -0.00010082126, z: 0.0000420928}
 --- !u!54 &6277494574757924145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -611,20 +610,6 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
---- !u!64 &4396935758784443015
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6277494574757924147}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: be96ca64726faed4ab4d6e43f67d4456, type: 3}
 --- !u!1 &6277494575077435610
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 0.5
+  triggerDist: 1
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0

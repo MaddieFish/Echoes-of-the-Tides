@@ -28,23 +28,6 @@ public class ArtifactCollections : MonoBehaviour
 
     //private Vector3 underwaterPosition = portalLocation1.transform;
 
-    /*
-//Only objects tagged "Artifact" can be collected and added to list
-void OnCollisionEnter (Collision col)
-{
-    if (col.gameObject.CompareTag("Artifact") == true)
-    {
-        collectedArtifacts.Add(col.gameObject);
-        print("You collected " + col.transform.name);
-    }
-
-}
-void OnCollisionExit (Collision col)
-{
-    collectedArtifacts.Remove(col.gameObject);
-    print("You removed the " + col.transform.name);
-}
-*/
 
     //Only objects tagged "Artifact" can be collected and added to list
     void OnTriggerEnter(Collider col)
@@ -53,6 +36,8 @@ void OnCollisionExit (Collision col)
         {
             collectedArtifacts.Add(col.gameObject);
             print("You collected " + col.transform.name);
+            col.transform.parent = transform;
+
         }
 
     }
@@ -60,6 +45,7 @@ void OnCollisionExit (Collision col)
     {
         collectedArtifacts.Remove(col.gameObject);
         print("You removed the " + col.transform.name);
+        col.transform.parent = null;
     }
 
     private void Update()
