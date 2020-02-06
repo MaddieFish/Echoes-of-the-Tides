@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Tests 3D Gameworld Beach.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/360 Underwater.unity
+    guid: 971a6e242767f804cadcaeb0a7e6f2a3
+  - enabled: 1
+    path: Assets/Scenes/360 Beach Recreation.unity
+    guid: 3b131d36b64dcc046aa20e50f8de54ec
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7307a86caa6479441a7f93a0b74ab960,
       type: 2}

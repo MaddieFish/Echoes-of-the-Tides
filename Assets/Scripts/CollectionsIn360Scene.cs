@@ -41,6 +41,7 @@ public class CollectionsIn360Scene : MonoBehaviour
     void Update()
     {
         FindObjectsProximity();
+        //SpawnComboObject();
     }
 
 
@@ -67,7 +68,7 @@ public class CollectionsIn360Scene : MonoBehaviour
     {
         if (sunkenShip == true && underWaterScene == true)
         {
-
+            
         }
 
         if (bonfire == true && beachRecScene == true)

@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 1
+  triggerDist: 2
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 1
+  triggerDist: 2
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 1
+  triggerDist: 2
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0
@@ -721,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 6551717738048684493}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -23.893, y: 1.1694756, z: 6.223}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 6, y: 6, z: 8}
   m_Children: []
   m_Father: {fileID: 5776886736668670307}
   m_RootOrder: 1
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35055cb113d6bbc4f9d8390cd443ab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDist: 1
+  triggerDist: 2
   ground: {fileID: 0}
   strangledFish: 0
   sunkenShip: 0

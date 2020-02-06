@@ -823,10 +823,12 @@ MonoBehaviour:
   strangledFish: 0
   bonfire: 0
   sunkenShip: 0
-  portalLocation1: {fileID: 0}
-  portalLocation2: {fileID: 0}
+  underwaterLocation: {fileID: 0}
+  beachRecLocation: {fileID: 0}
   underwaterPortalPrefab: {fileID: 0}
   beachRecPortalPrefab: {fileID: 0}
+  underwaterPortalIsCreated: 0
+  beachRecPortalIsCreated: 0
 --- !u!1001 &2572209088457970903
 PrefabInstance:
   m_ObjectHideFlags: 0

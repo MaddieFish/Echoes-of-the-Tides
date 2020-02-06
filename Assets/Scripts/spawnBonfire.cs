@@ -1,0 +1,38 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class spawnBonfire : MonoBehaviour
+{
+    public GameObject BonfirePrefab;
+    GameObject bonfire;
+    public List<string> beachRecCollections = new List<string>();
+    public bool bonfirePlaced;
+    public GameObject ground;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //ground = GameObject.FindWithTag("Ground");
+
+        if (ground != null)
+        {
+            beachRecCollections = ground.GetComponent<CollectionsIn360Scene>().beachRecCollections;
+
+        }
+    }
+        // Update is called once per frame
+    void Update()
+        {
+         if (beachRecCollections.Contains("Bonfire") == true && bonfirePlaced == false)
+         {
+            bonfirePlaced = true;
+            bonfire = Instantiate(BonfirePrefab);
+            bonfire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+         } 
+         else if (bonfirePlaced == true && beachRecCollections.Contains("Bonfire")==false)
+         {
+            Destroy(bonfire);
+         }
+    }
+}

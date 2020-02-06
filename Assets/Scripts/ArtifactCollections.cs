@@ -20,13 +20,16 @@ public class ArtifactCollections : MonoBehaviour
     public bool sunkenShip = false;
 
     //Move to different script
-    public GameObject portalLocation1;
-    public GameObject portalLocation2;
+    public GameObject underwaterLocation;
+    public GameObject beachRecLocation;
 
     public GameObject underwaterPortalPrefab;
     public GameObject beachRecPortalPrefab;
 
-    //private Vector3 underwaterPosition = portalLocation1.transform;
+    public bool underwaterPortalIsCreated;
+    public bool beachRecPortalIsCreated;
+
+    //private Vector3 underwaterPosition = portalLocation1.transform.position;
 
 
     //Only objects tagged "Artifact" can be collected and added to list
@@ -37,6 +40,7 @@ public class ArtifactCollections : MonoBehaviour
             collectedArtifacts.Add(col.gameObject);
             print("You collected " + col.transform.name);
             col.transform.parent = transform;
+            //col.attachedRigidbody.isKinematic = true;
 
         }
 
@@ -46,6 +50,8 @@ public class ArtifactCollections : MonoBehaviour
         collectedArtifacts.Remove(col.gameObject);
         print("You removed the " + col.transform.name);
         col.transform.parent = null;
+        //col.attachedRigidbody.isKinematic = false;
+
     }
 
     private void Update()
@@ -99,14 +105,26 @@ public class ArtifactCollections : MonoBehaviour
     //Move to different script eventually
     void InstantiatePortal()
     {
-        if (underwaterCollections.Count > 1)
+        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
         {
-            
+            Instantiate(underwaterPortalPrefab).transform.position = new Vector3(underwaterLocation.transform.position.x, underwaterLocation.transform.position.y, underwaterLocation.transform.position.z);
+            underwaterPortalIsCreated = true;
+        }
+        else if (underwaterCollections.Count == 1 && underwaterPortalIsCreated == true)
+        {
+            Destroy(Instantiate(underwaterPortalPrefab));
+            underwaterPortalIsCreated = false;
         }
 
-        if (beachRecCollections.Count > 1)
+        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
         {
-
+            Instantiate(beachRecPortalPrefab).transform.position = new Vector3(beachRecLocation.transform.position.x, beachRecLocation.transform.position.y, beachRecLocation.transform.position.z);
+            beachRecPortalIsCreated = true;
+        } 
+        else if(beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
+        {
+            Destroy(Instantiate(beachRecPortalPrefab));
+            beachRecPortalIsCreated = false;
         }
     }
 }
