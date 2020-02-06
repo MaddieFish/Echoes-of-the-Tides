@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -918,6 +918,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1223461177}
     m_Modifications:
+    - target: {fileID: 498969347314183752, guid: 2134b7b5f3ad7e44ebe6d722f0d1dd93,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eec043015c8cf4c41bd201fbe30ed23e, type: 2}
     - target: {fileID: 498969347776296257, guid: 2134b7b5f3ad7e44ebe6d722f0d1dd93,
         type: 3}
       propertyPath: m_Name
@@ -1091,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: 2969044494792733262, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.116
+      value: 3.538
       objectReference: {fileID: 0}
     - target: {fileID: 2969044494792733262, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
@@ -1146,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 3805695704498428196, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
@@ -1157,6 +1162,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6459759325075927109, guid: dc65cebf9fa14234e996afab9faea63a,
+        type: 3}
+      propertyPath: keyboardControls
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459759325075927109, guid: dc65cebf9fa14234e996afab9faea63a,
+        type: 3}
+      propertyPath: xrController
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6459759325075927134, guid: dc65cebf9fa14234e996afab9faea63a,
         type: 3}
       propertyPath: m_LocalPosition.x

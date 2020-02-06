@@ -55,12 +55,12 @@ public class portalToBeach3DWorld : MonoBehaviour
         }
 
         // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
-        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Tests 3D Gameworld Beach"));
+        //SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("Tests 3D Gameworld Beach"));
 
         //spawnLocation = GameObject.Find("PlayerSpawnerBeachRecBeach3D");
-        spawnLocation = GameObject.Find("PlayerSpawnerUnderwaterBeach");
+        //spawnLocation = GameObject.Find("PlayerSpawnerUnderwaterBeach");
 
-        player.transform.position = new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, spawnLocation.transform.position.z);
+        //player.transform.position = new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, spawnLocation.transform.position.z);
 
         // Unload the previous Scene
         SceneManager.UnloadSceneAsync(currentScene);

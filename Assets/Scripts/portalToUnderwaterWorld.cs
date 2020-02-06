@@ -55,11 +55,11 @@ public class portalToUnderwaterWorld : MonoBehaviour
         }
 
         // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
-        SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("360 Underwater"));
+        //SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName("360 Underwater"));
 
-        spawnLocation = GameObject.Find("PlayerSpawner");
+       // spawnLocation = GameObject.Find("PlayerSpawner");
 
-        player.transform.position = new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, spawnLocation.transform.position.z);
+        //player.transform.position = new Vector3(spawnLocation.transform.position.x, spawnLocation.transform.position.y, spawnLocation.transform.position.z);
 
         // Unload the previous Scene
         SceneManager.UnloadSceneAsync(currentScene);

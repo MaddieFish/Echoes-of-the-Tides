@@ -146,7 +146,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147604616}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: cbf9b3bde88734d4381a99c343086546, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: b03d60602fa5ae542833400a17741ab3, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -732,6 +732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Artifacts (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606763599124353545, guid: 10484f15ec6a39543ad08a8de621625d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5776886736668670307, guid: 10484f15ec6a39543ad08a8de621625d,
         type: 3}
@@ -1385,6 +1390,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 647231997109244771, guid: 7b48b2454ba7b6a4ab41c66ff1db1aa2,
+        type: 3}
+      propertyPath: xrController
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 647231997109244771, guid: 7b48b2454ba7b6a4ab41c66ff1db1aa2,
+        type: 3}
+      propertyPath: keyboardControls
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5863338116960779185, guid: 7b48b2454ba7b6a4ab41c66ff1db1aa2,
         type: 3}
       propertyPath: m_Name
