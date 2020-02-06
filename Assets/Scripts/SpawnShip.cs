@@ -13,7 +13,7 @@ public class SpawnShip : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ground = GameObject.FindWithTag("Ground");
+        //ground = GameObject.FindWithTag("Ground");
 
         if (ground != null)
         {

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ArtifactCollections : MonoBehaviour
 {
@@ -29,9 +30,15 @@ public class ArtifactCollections : MonoBehaviour
     public bool underwaterPortalIsCreated;
     public bool beachRecPortalIsCreated;
 
+    Scene currentScene;
+
     //private Vector3 underwaterPosition = portalLocation1.transform.position;
 
-
+    void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        //string activeScene = currentScene.name;
+    }
     //Only objects tagged "Artifact" can be collected and added to list
     void OnTriggerEnter(Collider col)
     {
@@ -57,7 +64,13 @@ public class ArtifactCollections : MonoBehaviour
     private void Update()
     {
         SearchForCollection();
-        InstantiatePortal();
+
+        if (currentScene.name == "Tests 3D Gameworld Beach")
+        {
+            InstantiatePortal();
+
+        }
+
     }
 
     void SearchForCollection()

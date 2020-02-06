@@ -25,7 +25,7 @@ public class SpawnStrangledFish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (underWaterCollections.Contains("Bonfire") == true && strangledFishPlaced == false)
+        if (underWaterCollections.Contains("Strangled Fish") == true && strangledFishPlaced == false)
         {
             strangledFishPlaced = true;
             strangled = Instantiate(StrangledFishPrefab);
