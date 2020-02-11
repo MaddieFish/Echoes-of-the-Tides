@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 185663569}
   - component: {fileID: 185663572}
   - component: {fileID: 185663573}
+  - component: {fileID: 185663574}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -477,6 +478,28 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!114 &185663574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185663568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bc411ef57fcd444bea74c413ba5cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisValues: {x: 0, y: 0}
+  moveSpeed: 5
+  rotSpeed: 200
+  pObject: {fileID: 0}
+  rb: {fileID: 0}
+  speedH: 2
+  speedV: 2
+  xrController: 0
+  keyboardControls: 0
+  mouseCameraRotation: 0
 --- !u!1001 &210557701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1249,7 +1272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 185663571}
   portal: {fileID: 238620597}
   otherPortal: {fileID: 1260386402}
 --- !u!114 &591768477
@@ -3188,7 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 185663571}
   portal: {fileID: 1260386402}
   otherPortal: {fileID: 238620597}
 --- !u!114 &1605758346
@@ -4110,7 +4133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 185663571}
   portal: {fileID: 399017369}
   otherPortal: {fileID: 210557702}
 --- !u!114 &1905092173
@@ -4765,7 +4788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 185663571}
   portal: {fileID: 210557702}
   otherPortal: {fileID: 399017369}
 --- !u!114 &2130992580
