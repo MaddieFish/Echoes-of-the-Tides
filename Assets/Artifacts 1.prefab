@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1074036270374485795}
   - component: {fileID: 335376093715016688}
   - component: {fileID: 9044877381819942656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7594079119930438268}
   - component: {fileID: 6656358445126410997}
   - component: {fileID: 6795350745745334040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 2590648733225618149}
   - component: {fileID: 2590648733225618146}
   - component: {fileID: 2590648733225618147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lighter
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 2590648734364503474}
   - component: {fileID: 2590648734364503475}
   - component: {fileID: 2590648734364503472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beer
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 2590648734682540125}
   - component: {fileID: 2590648734682540122}
   - component: {fileID: 2590648734682540123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wood
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 3407936774840664655}
   - component: {fileID: 3407936774841434733}
   - component: {fileID: 3407936774842564781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2969044494792733262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Artifacts 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 146449140890127188}
   - component: {fileID: 2590648734402543379}
   - component: {fileID: 2590648734402543381}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fish
   m_TagString: Artifact
   m_Icon: {fileID: 0}

@@ -267,6 +267,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &84658898
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 567601276}
+    m_Modifications:
+    - target: {fileID: 1699470692061779306, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_Name
+      value: pailbody 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.2369
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5db3109d44eee94b9a51ff682523f18, type: 3}
 --- !u!4 &117635558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8131626463930846533, guid: b9500cc29838bb747908047a23865cc0,
@@ -999,6 +1068,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1005637975}
+  - {fileID: 890238744}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1179,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 185663571}
+  playerCamera: {fileID: 0}
   portal: {fileID: 238620597}
   otherPortal: {fileID: 1260386402}
 --- !u!114 &591768477
@@ -1518,6 +1588,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2010156608}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &890238744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 84658898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898652978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,7 +1789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RigBaseGameObject: {fileID: 1005637974}
   m_CameraFloorOffsetObject: {fileID: 1180467756}
-  m_CameraGameObject: {fileID: 185663568}
+  m_CameraGameObject: {fileID: 0}
   m_TrackingOriginMode: 1
   m_TrackingSpace: 3
   m_CameraYOffset: 1.36144
@@ -3112,7 +3188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 185663571}
+  playerCamera: {fileID: 0}
   portal: {fileID: 1260386402}
   otherPortal: {fileID: 238620597}
 --- !u!114 &1605758346
@@ -4034,7 +4110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 185663571}
+  playerCamera: {fileID: 0}
   portal: {fileID: 399017369}
   otherPortal: {fileID: 210557702}
 --- !u!114 &1905092173
@@ -4689,7 +4765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3ee542340b8d246ab48d1212ed0144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 185663571}
+  playerCamera: {fileID: 0}
   portal: {fileID: 210557702}
   otherPortal: {fileID: 399017369}
 --- !u!114 &2130992580
