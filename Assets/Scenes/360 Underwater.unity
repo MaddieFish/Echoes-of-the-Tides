@@ -1920,7 +1920,7 @@ MonoBehaviour:
   speedV: 2
   xrController: 0
   keyboardControls: 0
-  mouseCameraRotation: 1
+  mouseCameraRotation: 0
 --- !u!1 &647231996930707165
 GameObject:
   m_ObjectHideFlags: 0
