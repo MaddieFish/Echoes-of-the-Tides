@@ -91,6 +91,18 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    /*
+    void OnCollisionEnter(collision col)
+    {
+
+        if (col.gameObject.CompareTag("Artifact") == true)
+        {
+            Physics.IgnoreCollision(col, collider);
+        }
+
+    }
+    */
+
     void XRJoystickMOvement()
     {
         //Vector2 axisValues;

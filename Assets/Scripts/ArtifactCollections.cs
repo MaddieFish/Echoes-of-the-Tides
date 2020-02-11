@@ -123,7 +123,7 @@ public class ArtifactCollections : MonoBehaviour
             Instantiate(underwaterPortalPrefab).transform.position = new Vector3(underwaterLocation.transform.position.x, underwaterLocation.transform.position.y, underwaterLocation.transform.position.z);
             underwaterPortalIsCreated = true;
         }
-        else if (underwaterCollections.Count == 1 && underwaterPortalIsCreated == true)
+        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
         {
             Destroy(Instantiate(underwaterPortalPrefab));
             underwaterPortalIsCreated = false;

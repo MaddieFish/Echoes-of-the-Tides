@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4778644364350016932}
   - component: {fileID: 4778644364350016934}
   - component: {fileID: 4778644364350016933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerSpawnerBeachRecBeach3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4778644364454732449}
   - component: {fileID: 4778644364454732448}
   - component: {fileID: 4778644364454732455}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4778644365357725096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TransportPlayerBeachRec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
