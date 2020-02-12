@@ -82,26 +82,7 @@ public class PlayerScript : MonoBehaviour
             MouseCameraRotation();
         }
 
-        /*
-         if (oculusControllerIntegration == true)
-        {
-            OculusJoystickMovement();
-        }
-         */
-
     }
-
-    /*
-    void OnCollisionEnter(collision col)
-    {
-
-        if (col.gameObject.CompareTag("Artifact") == true)
-        {
-            Physics.IgnoreCollision(col, collider);
-        }
-
-    }
-    */
 
     void XRJoystickMOvement()
     {
@@ -111,15 +92,17 @@ public class PlayerScript : MonoBehaviour
         print(axisValues);
 
         //transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
+        
+        /*
         transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
         transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
 
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
-
-        /*
-         transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
+        */
+        
+        transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
         transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed); 
-         */
+         
 
     }
 
@@ -150,20 +133,4 @@ public class PlayerScript : MonoBehaviour
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
-
-    /*
-    void OculusJoystickMovement()
-    {
-        //Joystick input for Oculus Rift (prob including Oculus Quest)
-        joystick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-
-        transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
-        transform.Translate(Vector3.forward * moveSpeed * joystick.y * Time.deltaTime);
-        transform.Translate(Vector3.right * moveSpeed * joystick.x * Time.deltaTime);
-
-        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time
-            .deltaTime);
-    }
-    */
-
 }
