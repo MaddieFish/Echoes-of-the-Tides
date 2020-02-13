@@ -1719,12 +1719,8 @@ MonoBehaviour:
   strangledFish: 0
   bonfire: 0
   sunkenShip: 0
-  underwaterLocation: {fileID: 0}
-  beachRecLocation: {fileID: 0}
-  underwaterPortalPrefab: {fileID: 8328039914282127405, guid: 8746c4a3bc271a5408b6e18a07137bb4,
-    type: 3}
-  beachRecPortalPrefab: {fileID: 4778644365357725103, guid: 095a3c8490cddbe49a243a4d9191751a,
-    type: 3}
+  toUnderwaterWorld: {fileID: 0}
+  toBeachRecWorld: {fileID: 0}
   underwaterPortalIsCreated: 0
   beachRecPortalIsCreated: 0
 --- !u!1 &4314074864377476871

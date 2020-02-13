@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8869838823082999929}
   - component: {fileID: 6551717736947315774}
   - component: {fileID: 6551717736947315768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fish
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5776886736668670307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Artifacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 6220836322993523042}
   - component: {fileID: 6220836322992720192}
   - component: {fileID: 6220836322991754112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 6551717736289887088}
   - component: {fileID: 6551717736289887095}
   - component: {fileID: 6551717736289887094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wood
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 6551717736909801119}
   - component: {fileID: 6551717736909801118}
   - component: {fileID: 6551717736909801117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beer
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 6551717738048684488}
   - component: {fileID: 6551717738048684495}
   - component: {fileID: 6551717738048684494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lighter
   m_TagString: Artifact
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 8644672205746107406}
   - component: {fileID: 9059213963802484957}
   - component: {fileID: 331693879150103597}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

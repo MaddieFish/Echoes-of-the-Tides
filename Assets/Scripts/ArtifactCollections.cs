@@ -21,11 +21,15 @@ public class ArtifactCollections : MonoBehaviour
     public bool sunkenShip = false;
 
     //Move to different script
-    public GameObject underwaterLocation;
-    public GameObject beachRecLocation;
+    //public GameObject underwaterLocation;
+    //public GameObject beachRecLocation;
 
-    public GameObject underwaterPortalPrefab;
-    public GameObject beachRecPortalPrefab;
+    //public GameObject underwaterPortalPrefab;
+    //public GameObject beachRecPortalPrefab;
+
+    public GameObject toUnderwaterWorld;
+    public GameObject toBeachRecWorld;
+   
 
     public bool underwaterPortalIsCreated;
     public bool beachRecPortalIsCreated;
@@ -36,7 +40,13 @@ public class ArtifactCollections : MonoBehaviour
 
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene();
+        toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
+        toBeachRecWorld = GameObject.Find("PortalToBeachRec360");
+
+        toUnderwaterWorld.SetActive(false);
+        toBeachRecWorld.SetActive(false);
+
+        //currentScene = SceneManager.GetActiveScene();
         //string activeScene = currentScene.name;
     }
     //Only objects tagged "Artifact" can be collected and added to list
@@ -47,6 +57,7 @@ public class ArtifactCollections : MonoBehaviour
             collectedArtifacts.Add(col.gameObject);
             print("You collected " + col.transform.name);
             col.transform.parent = transform;
+            col.transform.SetParent(transform);
             //col.attachedRigidbody.isKinematic = true;
 
         }
@@ -56,7 +67,9 @@ public class ArtifactCollections : MonoBehaviour
     {
         collectedArtifacts.Remove(col.gameObject);
         print("You removed the " + col.transform.name);
-        col.transform.parent = null;
+        //col.transform.parent = null;
+        col.transform.SetParent(null);
+
         //col.attachedRigidbody.isKinematic = false;
 
     }
@@ -64,13 +77,15 @@ public class ArtifactCollections : MonoBehaviour
     private void Update()
     {
         SearchForCollection();
+    
+        InstantiatePortal();
 
-        if (currentScene.name == "Tests 3D Gameworld Beach")
-        {
-            InstantiatePortal();
-
-        }
-
+        /*
+    if (currentScene.name == "Tests 3D Gameworld Beach")
+    {
+        InstantiatePortal();
+    }
+    */
     }
 
     void SearchForCollection()
@@ -120,10 +135,37 @@ public class ArtifactCollections : MonoBehaviour
     {
         if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
         {
+            toUnderwaterWorld.SetActive(true);
+            underwaterPortalIsCreated = true;
+        }
+        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
+        {
+            toUnderwaterWorld.SetActive(false);
+            underwaterPortalIsCreated = false;
+        }
+
+        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
+        {
+            toBeachRecWorld.SetActive(true);
+            beachRecPortalIsCreated = true;
+        }
+        else if (beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
+        {
+            toBeachRecWorld.SetActive(false);
+            beachRecPortalIsCreated = false;
+        }
+    }
+}
+
+/*
+void InstantiatePortal()
+    {
+        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
+        {
             Instantiate(underwaterPortalPrefab).transform.position = new Vector3(underwaterLocation.transform.position.x, underwaterLocation.transform.position.y, underwaterLocation.transform.position.z);
             underwaterPortalIsCreated = true;
         }
-        else if (underwaterCollections.Count == 1 && underwaterPortalIsCreated == true)
+        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
         {
             Destroy(Instantiate(underwaterPortalPrefab));
             underwaterPortalIsCreated = false;
@@ -140,4 +182,4 @@ public class ArtifactCollections : MonoBehaviour
             beachRecPortalIsCreated = false;
         }
     }
-}
+    */

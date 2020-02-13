@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Artifact
   - Ground
+  - Artifact
   layers:
   - Default
   - TransparentFX
@@ -15,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Artifacts
+  - Pail
+  - Portal
   - 
   - 
   - 

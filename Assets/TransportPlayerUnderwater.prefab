@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8328039913831329006}
   - component: {fileID: 8328039913831329000}
   - component: {fileID: 8328039913831329007}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerSpawnerUnderwaterBeach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8328039914161787101}
   - component: {fileID: 8328039914161787100}
   - component: {fileID: 8328039914161787075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8328039914282127406}
   - component: {fileID: 8328039914282127407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TransportPlayerUnderwater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
