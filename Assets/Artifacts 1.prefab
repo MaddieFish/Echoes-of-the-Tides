@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 3182301632675206799}
   - component: {fileID: 5192663089220152943}
   - component: {fileID: 5049631948256042599}
+  - component: {fileID: 8456386331339245271}
   m_Layer: 9
   m_Name: Wood
   m_TagString: Artifact
@@ -287,6 +288,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!135 &8456386331339245271
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394080816746721795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: -0.0000038146973, z: -0.0000014305115}
 --- !u!1 &2590648733225618144
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +316,7 @@ GameObject:
   - component: {fileID: 2590648733225618149}
   - component: {fileID: 2590648733225618146}
   - component: {fileID: 2590648733225618147}
+  - component: {fileID: 118880291184613846}
   m_Layer: 9
   m_Name: Lighter
   m_TagString: Artifact
@@ -495,6 +510,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!135 &118880291184613846
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590648733225618144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.008440582
+  m_Center: {x: -2.3283064e-10, y: 0.000000060070306, z: 0}
 --- !u!1 &2590648734364503473
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +538,7 @@ GameObject:
   - component: {fileID: 2590648734364503474}
   - component: {fileID: 2590648734364503475}
   - component: {fileID: 2590648734364503472}
+  - component: {fileID: 2696639035706876919}
   m_Layer: 9
   m_Name: Beer
   m_TagString: Artifact
@@ -704,6 +733,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!135 &2696639035706876919
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590648734364503473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.007367745
+  m_Center: {x: -0.000000020023435, y: 0.025824245, z: 0.00000002514571}
 --- !u!1 &3407936774840376943
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +872,7 @@ GameObject:
   - component: {fileID: 146449140890127188}
   - component: {fileID: 2590648734402543379}
   - component: {fileID: 2590648734402543381}
+  - component: {fileID: 5877310734222119220}
   m_Layer: 9
   m_Name: Fish
   m_TagString: Artifact
@@ -977,3 +1020,16 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!135 &5877310734222119220
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823779228928892424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

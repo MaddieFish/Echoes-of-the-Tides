@@ -2,7 +2,7 @@
 
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 //VR Shader Integration: https://unity3d.com/how-to/XR-graphics-development-tips#single-pass-stereo-rendering
-//https://docs.unity3d.com/Manual/SinglePassStereoRendering.html
+//https://docs.unity3d.com/Manual/SinglePassInstancing.html
 
 Shader "Unlit/ScreenCutoutVR"
 {

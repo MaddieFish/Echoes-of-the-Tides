@@ -247,6 +247,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &73442913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2590648733225618144, guid: 9e9e8649981a50b4c861879252e0d773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911592594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &73442914
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73442913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.008440582
+  m_Center: {x: -2.3283064e-10, y: 0.000030518044, z: 0}
 --- !u!1001 &84658898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,6 +1252,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &221882785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2590648734364503473, guid: 9e9e8649981a50b4c861879252e0d773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911592594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &221882786
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221882785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.007367745
+  m_Center: {x: -0.000000020023435, y: 0.025824245, z: 0.00000002514571}
 --- !u!1001 &238620596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1496,6 +1534,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &261265843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2394080816746721795, guid: 9e9e8649981a50b4c861879252e0d773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911592594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &261265844
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261265843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: -0.00048828125}
 --- !u!4 &399017369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8630490640019939094, guid: b9500cc29838bb747908047a23865cc0,
@@ -1992,6 +2049,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30047465}
     m_Modifications:
+    - target: {fileID: 8449222895829553930, guid: 71611ac35f0a02840bc86ca930cf3e11,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8449222895829553933, guid: 71611ac35f0a02840bc86ca930cf3e11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2183,6 +2245,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 713836755}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &989468299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989468297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea236436ec0aa44f9c2001895349446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactsPlaced: []
+  underWaterCollections: []
+  beachRecCollections: []
+  triggerDist: 1
+  underWaterScene: 0
+  beachRecScene: 1
+  strangledFish: 0
+  sunkenShip: 0
+  beerAndWood: 0
+  woodAndLighter: 0
+  lighterAndBeer: 0
+  bonfire: 0
 --- !u!1 &1005637974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,7 +2768,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262624135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7c79ccb6d6dd9148a74bd4a0a50b9c3, type: 3}
   m_Name: 
@@ -2691,6 +2777,30 @@ MonoBehaviour:
   underWaterCollections: []
   beachRecCollections: []
   triggerDist: 2
+  underWaterScene: 1
+  beachRecScene: 0
+  strangledFish: 0
+  sunkenShip: 0
+  beerAndWood: 0
+  woodAndLighter: 0
+  lighterAndBeer: 0
+  bonfire: 0
+--- !u!114 &1262624138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262624135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea236436ec0aa44f9c2001895349446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactsPlaced: []
+  underWaterCollections: []
+  beachRecCollections: []
+  triggerDist: 1
   underWaterScene: 1
   beachRecScene: 0
   strangledFish: 0
@@ -3543,6 +3653,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1690319645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5823779228928892424, guid: 9e9e8649981a50b4c861879252e0d773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1911592594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1690319646
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690319645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1711605856
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +4669,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -22.55
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5877310734222119220, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
+    - {fileID: 8456386331339245271, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
+    - {fileID: 2696639035706876919, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
+    - {fileID: 118880291184613846, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
 --- !u!4 &1943177175 stripped
 Transform:
@@ -5343,6 +5476,7 @@ GameObject:
   - component: {fileID: 3182301631403975315}
   - component: {fileID: 5192663088209681011}
   - component: {fileID: 5049631949266184827}
+  - component: {fileID: 2394080817891067424}
   m_Layer: 9
   m_Name: Wood
   m_TagString: Artifact
@@ -5350,6 +5484,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!135 &2394080817891067424
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394080817891067423}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50000006
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2590648733090068904
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5501,6 +5648,7 @@ GameObject:
   - component: {fileID: 2590648733090068910}
   - component: {fileID: 2590648733090068911}
   - component: {fileID: 2590648733090068908}
+  - component: {fileID: 2590648733090068912}
   m_Layer: 9
   m_Name: Beer
   m_TagString: Artifact
@@ -5537,6 +5685,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &2590648733090068912
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590648733090068909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0073677446
+  m_Center: {x: -0.000000020023437, y: 0.025824243, z: 0.000000025145713}
 --- !u!114 &2590648733127035657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5729,6 +5890,7 @@ GameObject:
   - component: {fileID: 2590648734228430585}
   - component: {fileID: 2590648734228430590}
   - component: {fileID: 2590648734228430591}
+  - component: {fileID: 2590648734228430589}
   m_Layer: 9
   m_Name: Lighter
   m_TagString: Artifact
@@ -5736,6 +5898,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!135 &2590648734228430589
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590648734228430588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.008440581
+  m_Center: {x: -2.3283067e-10, y: 4.6566126e-10, z: 0}
 --- !u!54 &2590648734228430590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6030,6 +6205,7 @@ GameObject:
   - component: {fileID: 146449141760819016}
   - component: {fileID: 2590648733127035663}
   - component: {fileID: 2590648733127035657}
+  - component: {fileID: 5823779227654187541}
   m_Layer: 9
   m_Name: Fish
   m_TagString: Artifact
@@ -6037,6 +6213,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!135 &5823779227654187541
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823779227654187540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: -0.68, y: 0, z: 0}
 --- !u!4 &6052700800865810154
 Transform:
   m_ObjectHideFlags: 0
