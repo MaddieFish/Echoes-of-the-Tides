@@ -13,7 +13,7 @@ public class ArtifactProximity : MonoBehaviour
     public List<string> underWaterCollections = new List<string>();
     public List<string> beachRecCollections = new List<string>();
 
-    public float triggerDist = 0.5f;
+    //public float triggerDist;
 
     //Choose scene
     public bool underWaterScene;
@@ -62,37 +62,41 @@ public class ArtifactProximity : MonoBehaviour
 
     void FindObjectsProximity()
     {
-        for (int i = 0; i < artifacts.Count; i++)
+        //for (int i = 0; i < artifacts.Count; i++)
+        foreach (GameObject artifact in artifacts)
         {
-            SphereCollider artifactCollider = artifacts[i].GetComponent<SphereCollider>();
-            artifactCollider.radius = triggerDist;
+            SphereCollider artifactCollider = artifact.GetComponentInChildren<SphereCollider>();
+            //triggerDist = artifactCollider.radius;
+            //artifactCollider.radius = triggerDist;
 
             foreach (Transform otherArtifact in artifactsPlaced)
             {
 
-                print(artifacts[i].name + " " + otherArtifact.name);
+                print(artifact.name + " " + otherArtifact.name);
                 Vector3 otherArtifactPos = otherArtifact.position;
                 
 
-                if (otherArtifact && otherArtifact.name != artifacts[i].name)
+                if (otherArtifact && otherArtifact.name != artifact.name)
                 {
-                    //float dist = Vector3.Distance(otherArtifact.position, artifacts[i].transform.position);
-                    //print(artifacts[i].name + " Distance to " + otherArtifact.name + ": " + dist);
+                    //float dist = Vector3.Distance(otherArtifact.position, artifact.transform.position);
+                    //print(artifact.name + " Distance to " + otherArtifact.name + ": " + dist);
 
                     //Collider[] proximityColliders = Physics.OverlapSphere(otherArtifact.position, triggerDist);
-                    //print(artifacts[i].name + " is in proximity of " + otherArtifact.name);
+                    //print(artifact.name + " is in proximity of " + otherArtifact.name);
 
-                      if (artifactCollider.name == "Fish" && artifactCollider.bounds.Contains(otherArtifactPos))
+                      if (artifact.name == "Fish" && artifactCollider.bounds.Contains(otherArtifactPos))
 
                         {
-                            if (otherArtifact.name == "Wood" && sunkenShip == false)
+                        print(artifact.name + " is in proximity of " + otherArtifact.name);
+
+                        if (otherArtifact.name == "Wood" && !sunkenShip)
                         {
                             underWaterCollections.Add("Sunken Ship");
                             sunkenShip = true;
 
                         }
 
-                        if (otherArtifact.name == "Beer" && strangledFish == false)
+                        if (otherArtifact.name == "Beer" && !strangledFish)
                         {
                             underWaterCollections.Add("Strangled Fish");
                             strangledFish = true;
@@ -114,9 +118,11 @@ public class ArtifactProximity : MonoBehaviour
                         }
                     }
 
-                    if (artifactCollider.name == "Wood" && artifactCollider.bounds.Contains(otherArtifactPos))
+                    if (artifact.name == "Wood" && artifactCollider.bounds.Contains(otherArtifactPos))
                     {
-                        if (otherArtifact.name == "Fish" && sunkenShip == false)
+                        print(artifact.name + " is in proximity of " + otherArtifact.name);
+
+                        if (otherArtifact.name == "Fish" && !sunkenShip)
                         {
                             underWaterCollections.Add("Sunken Ship");
                             sunkenShip = true;
@@ -162,9 +168,11 @@ public class ArtifactProximity : MonoBehaviour
                         }
                     }
 
-                    if (artifactCollider.name == "Beer" && artifactCollider.bounds.Contains(otherArtifactPos))
+                    if (artifact.name == "Beer" && artifactCollider.bounds.Contains(otherArtifactPos))
                     {
-                        if (otherArtifact.name == "Fish" && strangledFish == false)
+                        print(artifact.name + " is in proximity of " + otherArtifact.name);
+
+                        if (otherArtifact.name == "Fish" && !strangledFish)
                         {
                             underWaterCollections.Add("Strangled Fish");
                             strangledFish = true;
@@ -210,8 +218,10 @@ public class ArtifactProximity : MonoBehaviour
                         }
                     }
 
-                    if (artifactCollider.name == "Lighter" && artifactCollider.bounds.Contains(otherArtifactPos))
+                    if (artifact.name == "Lighter" && artifactCollider.bounds.Contains(otherArtifactPos))
                     {
+                        print(artifact.name + " is in proximity of " + otherArtifact.name);
+
                         /// Bonfire combo
 
                         if (bonfire == false && woodAndLighter == true && lighterAndBeer == true)

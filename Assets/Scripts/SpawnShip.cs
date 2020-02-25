@@ -17,7 +17,12 @@ public class SpawnShip : MonoBehaviour
 
         if (ground != null)
         {
-            underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
+            //underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
+            underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+
+            ship = Instantiate(ShipPrefab);
+            ship.SetActive(false);
+            ship.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         }
     }
@@ -27,12 +32,16 @@ public class SpawnShip : MonoBehaviour
         if (underWaterCollections.Contains("Sunken Ship") == true && shipPlaced == false)
         {
             shipPlaced = true;
-            ship = Instantiate(ShipPrefab);
-            ship.transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y, transform.position.z);
+            ship.SetActive(true);
+
+            //ship = Instantiate(ShipPrefab);
+            //ship.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
         else if (shipPlaced == true && underWaterCollections.Contains("Sunken Ship") == false)
         {
-            Destroy(ship);
+            shipPlaced = false;
+            ship.SetActive(false);
+
         }
     }
 }

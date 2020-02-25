@@ -17,7 +17,12 @@ public class SpawnStrangledFish : MonoBehaviour
 
         if (ground != null)
         {
-            underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
+            //underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
+            underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+
+            strangled = Instantiate(StrangledFishPrefab);
+            strangled.SetActive(false);
+            strangled.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         }
 
@@ -28,12 +33,17 @@ public class SpawnStrangledFish : MonoBehaviour
         if (underWaterCollections.Contains("Strangled Fish") == true && strangledFishPlaced == false)
         {
             strangledFishPlaced = true;
-            strangled = Instantiate(StrangledFishPrefab);
-            strangled.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            strangled.SetActive(true);
+
+            //strangled = Instantiate(StrangledFishPrefab);
+            //strangled.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
         else if (strangledFishPlaced == true && underWaterCollections.Contains("Strangled Fish") == false)
         {
-            Destroy(strangled);
+            //Destroy(strangled);
+            strangledFishPlaced = false;
+            strangled.SetActive(false);
+
         }
     }
 }

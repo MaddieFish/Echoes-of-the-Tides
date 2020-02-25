@@ -37,8 +37,6 @@ Shader "Unlit/ScreenCutoutVR"
 				float4 vertex : POSITION;
 				float2 uv : TEXCOORD0;
 
-				UNITY_VERTEX_INPUT_INSTANCE_ID //instance
-
 				UNITY_VERTEX_INPUT_INSTANCE_ID // uint instanceID : SV_InstanceID;
 
 			};

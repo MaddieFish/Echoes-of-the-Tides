@@ -17,7 +17,12 @@ public class spawnBonfire : MonoBehaviour
 
         if (ground != null)
         {
-            beachRecCollections = ground.GetComponent<CollectionsIn360Scene>().beachRecCollections;
+            //beachRecCollections = ground.GetComponent<CollectionsIn360Scene>().beachRecCollections;
+            beachRecCollections = ground.GetComponent<ArtifactProximity>().beachRecCollections;
+
+            bonfire = Instantiate(BonfirePrefab);
+            bonfire.SetActive(false);
+            bonfire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         }
     }
@@ -27,12 +32,15 @@ public class spawnBonfire : MonoBehaviour
          if (beachRecCollections.Contains("Bonfire") == true && bonfirePlaced == false)
          {
             bonfirePlaced = true;
-            bonfire = Instantiate(BonfirePrefab);
-            bonfire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-         } 
-         else if (bonfirePlaced == true && beachRecCollections.Contains("Bonfire")==false)
+            bonfire.SetActive(true);
+
+            //bonfire = Instantiate(BonfirePrefab);
+            //bonfire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        }
+        else if (bonfirePlaced == true && beachRecCollections.Contains("Bonfire")==false)
          {
-            Destroy(bonfire);
-         }
+            bonfirePlaced = false;
+            bonfire.SetActive(false);
+        }
     }
 }
