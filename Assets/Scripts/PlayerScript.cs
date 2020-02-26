@@ -8,7 +8,9 @@ using UnityEngine.XR;
 public class PlayerScript : MonoBehaviour
 {
     //Movement
-    public Vector2 axisValues;
+    public Vector2 axisValuesR;
+    public Vector2 axisValuesL;
+
     //public Vector2 joystick;
 
 
@@ -88,20 +90,23 @@ public class PlayerScript : MonoBehaviour
     {
         //Vector2 axisValues;
 
-        RightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValues);
-        print(axisValues);
+        RightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesR);
+        print(axisValuesR);
+
+        LeftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesL);
+        print(axisValuesL);
 
         //transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
-        
+
         /*
         transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
         transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
 
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
         */
-        
-        transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed); 
+
+        transform.Rotate(0, Input.GetAxis("axisValuesR") * Time.deltaTime * rotSpeed, 0);
+        transform.Translate(0, 0, Input.GetAxis("axisValuesL") * Time.deltaTime * moveSpeed); 
          
 
     }
