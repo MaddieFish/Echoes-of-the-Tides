@@ -26,9 +26,6 @@ Shader "Unlit/ScreenCutoutVR"
 			#pragma vertex vert
 			#pragma fragment frag
 
-			#pragma multi_compile_instancing //instance
-
-
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -59,9 +56,6 @@ Shader "Unlit/ScreenCutoutVR"
 				UNITY_INITIALIZE_OUTPUT(v2f, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); // o.stereoEyeIndex = unity_StereoEyeIndex;
 
-				UNITY_TRANSFER_INSTANCE_ID(v, o); //Instance
-
-
 				o.vertex = UnityObjectToClipPos(v.vertex);
 
 				o.screenPos = ComputeScreenPos(o.vertex);
@@ -71,21 +65,15 @@ Shader "Unlit/ScreenCutoutVR"
 				return o;
 			}
 
-			//sampler2D _MainTex;
+			sampler2D _MainTex;
 			
 			//float4 colors[2];
 
-			UNITY_DECLARE_SCREENSPACE_TEXTURE(_MainTex); //Insert
-
 			fixed4 frag(v2f i) : SV_Target
 			{
-				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i); // unity_StereoEyeIndex = i.stereoEyeIndex;
-				//fixed4 col = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv); //Insert
 
 				i.screenPos /= i.screenPos.w;
-				//fixed4 col = tex2D(_MainTex, float2(i.screenPos.x, i.screenPos.y));
-				fixed4 col = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, float2(i.screenPos.x, i.screenPos.y)); //Insert
-
+				fixed4 col = tex2D(_MainTex, float2(i.screenPos.x, i.screenPos.y));
 
 				// just invert the colors
 				//col = 1 - col;
