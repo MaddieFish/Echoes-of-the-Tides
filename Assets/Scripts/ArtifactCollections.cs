@@ -58,7 +58,12 @@ public class ArtifactCollections : MonoBehaviour
             print("You collected " + col.transform.name);
             col.transform.parent = transform;
             col.transform.SetParent(transform);
+
+            //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
+
+            //StartCoroutine(KinematicCoroutine());
             //col.attachedRigidbody.isKinematic = true;
+
 
         }
 
@@ -71,6 +76,13 @@ public class ArtifactCollections : MonoBehaviour
         col.transform.SetParent(null);
 
         //col.attachedRigidbody.isKinematic = false;
+
+    }
+
+
+    IEnumerator KinematicCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(5);
 
     }
 

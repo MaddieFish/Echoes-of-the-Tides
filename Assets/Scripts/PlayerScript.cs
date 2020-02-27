@@ -11,17 +11,15 @@ public class PlayerScript : MonoBehaviour
     public Vector2 axisValuesR;
     public Vector2 axisValuesL;
 
-    //public Vector2 joystick;
-
 
     public float moveSpeed = 5.0f;
     public float rotSpeed = 200.0f;
-    public GameObject pObject;
+    //public GameObject pObject;
     //public GameObject centreEye;
 
 
 
-    public Rigidbody rb;
+    //public Rigidbody rb;
 
     //XR Controller Devuces
     public InputDevice LeftController;
@@ -38,18 +36,19 @@ public class PlayerScript : MonoBehaviour
     public bool xrController;
     public bool keyboardControls;
     public bool mouseCameraRotation;
-    //public bool oculusControllerIntegration;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         var inputDevices = new List<InputDevice>();
         InputDevices.GetDevices(inputDevices);
-
+        //Nake sure headset is worn or you trigger the sensor
         foreach (var device in inputDevices)
         {
+            Debug.Log(device.name);
+           
             if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left))
             {
                 Debug.Log("Found Left Controller");
@@ -71,7 +70,7 @@ public class PlayerScript : MonoBehaviour
 
         if (xrController == true)
         {
-            XRJoystickMOvement();
+            XRJoystickMovement();
         }
 
         if (keyboardControls == true)
@@ -79,35 +78,46 @@ public class PlayerScript : MonoBehaviour
             KeyboardMovement();
         }
 
+        /*
         if (mouseCameraRotation == true)
         {
             MouseCameraRotation();
         }
-
+        */
     }
 
-    void XRJoystickMOvement()
+    void XRJoystickMovement()
     {
         //Vector2 axisValues;
 
         RightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesR);
-        print(axisValuesR);
+        Debug.Log(axisValuesR);
 
         LeftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesL);
-        print(axisValuesL);
-
-        //transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
+        Debug.Log(axisValuesL);
 
         /*
+        transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
+
+        
         transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
         transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
 
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
         */
 
-        transform.Rotate(0, Input.GetAxis("axisValuesR") * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, Input.GetAxis("axisValuesL") * Time.deltaTime * moveSpeed); 
-         
+        //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(axisValuesL.x * Time.deltaTime * moveSpeed, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+        transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
+
+
+        //transform.Rotate(0, Input.GetAxis("HorizontalR") * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(Input.GetAxis("HorizontalL") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
+        //transform.Translate(Vector3.forward * moveSpeed * Input.GetAxis("VerticalR") * Time.deltaTime);
+
+        //transform.Rotate(0, Camera.main.transform.rotation.y, 0);
+        //transform.Translate(-Camera.main.transform.right * moveSpeed * Input.GetAxis("VerticalR") * Time.deltaTime);
+
 
     }
 
@@ -126,8 +136,8 @@ public class PlayerScript : MonoBehaviour
         //Movement through transform
         //transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed)
 
-        transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed);
+        transform.Rotate(0, Input.GetAxis("HorizontalL") * Time.deltaTime * rotSpeed, 0);
+        transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
 
     }
 
