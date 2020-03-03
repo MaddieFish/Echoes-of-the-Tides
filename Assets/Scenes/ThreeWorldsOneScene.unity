@@ -2305,8 +2305,8 @@ MonoBehaviour:
   rotSpeed: 100
   speedH: 2
   speedV: 2
-  xrController: 0
-  keyboardControls: 1
+  xrController: 1
+  keyboardControls: 0
   mouseCameraRotation: 0
 --- !u!136 &567601280
 CapsuleCollider:
