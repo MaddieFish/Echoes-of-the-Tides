@@ -18,7 +18,7 @@ public class Collections : MonoBehaviour
     public bool underWaterScene;
     public bool beachRecScene;
 
-
+    /*
     //2 combo collections
     public bool strangledFish = false;
     public bool sunkenShip = false;
@@ -28,6 +28,7 @@ public class Collections : MonoBehaviour
     public bool woodAndLighter = false;
     public bool lighterAndBeer = false;
     public bool bonfire = false;
+    */
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +72,7 @@ public class Collections : MonoBehaviour
     public void AddToBeach(string beachObject)
     {
         if (!beachRecCollections.Contains(beachObject)){
-            underWaterCollections.Remove(beachObject);
+            underWaterCollections.Add(beachObject);
         }
 
     }

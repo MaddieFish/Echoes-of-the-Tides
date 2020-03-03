@@ -22,19 +22,9 @@ public class Artifact : MonoBehaviour
     public bool lighterAndBeer;
     public bool bonfire;
 
-    /*
-    Transform otherArtifactTrans;
-    Collider artifactCol;
-    Vector3 otherArtifactPos;
-    */
-
     // Start is called before the first frame update
     void Start()
     {
-        //artifactCol = gameObject.GetComponentInChildren<SphereCollider>();
-
-      
-        
         /*
         strangledFish = collections.strangledFish;
         sunkenShip = collections.sunkenShip;
@@ -54,14 +44,7 @@ public class Artifact : MonoBehaviour
         beachRecCollections = collections.beachRecCollections;
         underWaterCollections = collections.underWaterCollections;
         artifactsPlaced = collections.artifacts;
-        /*
-        Vector3 otherArtifactPos = otherArtifactTrans.position;
-
-        if (artifactCol.bounds.Contains(otherArtifactPos))
-        {
-
-        };
-        */
+      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,8 +58,11 @@ public class Artifact : MonoBehaviour
      
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
+            //If gameObject is Fish
             if (transform.parent.name == "Fish" && other.name == "Wood")
             {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
                 collections.AddToUnderwater("Sunken Ship");
             } 
             else if (transform.parent.name == "Fish" && other.name == "Beer")
@@ -84,20 +70,59 @@ public class Artifact : MonoBehaviour
                 collections.AddToUnderwater("Strangled Fish");
             }
 
+            //If gameObject is Wood
             if (transform.parent.name == "Wood" && other.name == "Fish")
             {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
                 collections.AddToUnderwater("Sunken Ship");
             }
+            else if (transform.parent.name == "Wood" && other.name == "Beer")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
 
+                beerAndWood = true;
+            }
+            else if (transform.parent.name == "Wood" && other.name == "Lighter")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                woodAndLighter = true;
+            }
+
+            //If gameObject is Beer
             if (transform.parent.name == "Beer" && other.name == "Fish")
             {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
                 collections.AddToUnderwater("Strangled Fish");
 
             }
-
-            if (transform.parent.name == "Lighter")
+            else if (transform.parent.name == "Beer" && other.name == "Wood")
             {
+                print(transform.parent.name + " is in proximity of " + other.name);
 
+                beerAndWood = true;
+            }
+            else if (transform.parent.name == "Beer" && other.name == "Lighter")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                lighterAndBeer = true;
+            }
+
+            //If gameObject is Lighter
+            if (transform.parent.name == "Lighter" && other.name == "Wood")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                woodAndLighter = true;
+            }
+            else if (transform.parent.name == "Lighter" && other.name == "Beer")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                lighterAndBeer = true;
             }
         }
 
