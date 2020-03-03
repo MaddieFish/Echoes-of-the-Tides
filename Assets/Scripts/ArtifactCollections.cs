@@ -50,7 +50,7 @@ public class ArtifactCollections : MonoBehaviour
         //string activeScene = currentScene.name;
     }
     //Only objects tagged "Artifact" can be collected and added to list
-    void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
         {

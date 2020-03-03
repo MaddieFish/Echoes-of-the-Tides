@@ -2305,8 +2305,8 @@ MonoBehaviour:
   rotSpeed: 100
   speedH: 2
   speedV: 2
-  xrController: 1
-  keyboardControls: 0
+  xrController: 0
+  keyboardControls: 1
   mouseCameraRotation: 0
 --- !u!136 &567601280
 CapsuleCollider:
@@ -8831,7 +8831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2394080818599519377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1978.54, y: 1612.3325, z: 912.96}
+  m_LocalPosition: {x: -1978.54, y: 1612.3325, z: 911.38}
   m_LocalScale: {x: 0.3362289, y: 0.08505355, z: 0.14492}
   m_Children:
   - {fileID: 1843518475}
@@ -8950,7 +8950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5823779228137179290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1978.56, y: 1612.4956, z: 913.9}
+  m_LocalPosition: {x: -1978.56, y: 1612.4956, z: 915.53}
   m_LocalScale: {x: 0.09004051, y: 0.09004051, z: 0.09004051}
   m_Children:
   - {fileID: 1074036271161993649}
