@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8865626278916762524}
   - component: {fileID: 5792537188251227087}
+  - component: {fileID: 6912558329621635163}
   m_Layer: 12
   m_Name: Sphere Collider
   m_TagString: ProximityTrigger
@@ -44,3 +45,27 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6912558329621635163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485749461791345256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40c94de8d8e4564b8a9aa6df77dce6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  underWaterCollections: []
+  beachRecCollections: []
+  artifactsPlaced: []
+  groundCollision: 0
+  ground: {fileID: 0}
+  collections: {fileID: 0}
+  strangledFish: 0
+  sunkenShip: 0
+  beerAndWood: 0
+  woodAndLighter: 0
+  lighterAndBeer: 0
+  bonfire: 0
