@@ -19,19 +19,15 @@ public class Collections : MonoBehaviour
     public bool beachRecScene;
 
 
-    /*
     //2 combo collections
     public bool strangledFish = false;
     public bool sunkenShip = false;
-    */
 
-    /*
     //3 combo collections
-    public bool beerAndWood;
-    public bool woodAndLighter;
-    public bool lighterAndBeer;
-    public bool bonfire;
-    */
+    public bool beerAndWood = false;
+    public bool woodAndLighter = false;
+    public bool lighterAndBeer = false;
+    public bool bonfire = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +37,8 @@ public class Collections : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        if (beerAndWood == true && woodAndLighter == true && lighterAndBeer == true)
-        {
-            AddToBeach("Bonfire");
-        }
-        else if (beerAndWood == false && woodAndLighter == false && lighterAndBeer == false)
-        {
-            RemoveFromBeach("Bonfire");
-        }
-        */
+    {
+
     }
     void OnCollisionEnter(Collision col)
     {
@@ -83,7 +71,7 @@ public class Collections : MonoBehaviour
     public void AddToBeach(string beachObject)
     {
         if (!beachRecCollections.Contains(beachObject)){
-            underWaterCollections.Add(beachObject);
+            underWaterCollections.Remove(beachObject);
         }
 
     }
