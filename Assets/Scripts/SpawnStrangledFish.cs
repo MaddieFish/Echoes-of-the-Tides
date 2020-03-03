@@ -18,7 +18,9 @@ public class SpawnStrangledFish : MonoBehaviour
         if (ground != null)
         {
             //underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
-            underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+            //underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+            underWaterCollections = ground.GetComponent<Collections>().underWaterCollections;
+
 
             strangled = Instantiate(StrangledFishPrefab);
             strangled.SetActive(false);

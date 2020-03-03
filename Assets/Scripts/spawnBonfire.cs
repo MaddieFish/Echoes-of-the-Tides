@@ -18,7 +18,9 @@ public class spawnBonfire : MonoBehaviour
         if (ground != null)
         {
             //beachRecCollections = ground.GetComponent<CollectionsIn360Scene>().beachRecCollections;
-            beachRecCollections = ground.GetComponent<ArtifactProximity>().beachRecCollections;
+            //beachRecCollections = ground.GetComponent<ArtifactProximity>().beachRecCollections;
+            beachRecCollections = ground.GetComponent<Collections>().beachRecCollections;
+
 
             bonfire = Instantiate(BonfirePrefab);
             bonfire.SetActive(false);

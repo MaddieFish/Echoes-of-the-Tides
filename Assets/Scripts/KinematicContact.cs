@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class KinematicContact : MonoBehaviour
 {
-    private void OnCollisionEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
         {
 
-            col.attachedRigidbody.isKinematic = true;
+            //col.attachedRigidbody.isKinematic = true;
 
         }
     }
 
-    private void OnCollisionExit(Collider col)
+    private void OnCollisionExit(Collision col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
         {
-            col.attachedRigidbody.isKinematic = false;
+            //col.attachedRigidbody.isKinematic = false;
 
         }
     }

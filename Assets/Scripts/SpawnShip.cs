@@ -18,7 +18,9 @@ public class SpawnShip : MonoBehaviour
         if (ground != null)
         {
             //underWaterCollections = ground.GetComponent<CollectionsIn360Scene>().underWaterCollections;
-            underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+            //underWaterCollections = ground.GetComponent<ArtifactProximity>().underWaterCollections;
+            underWaterCollections = ground.GetComponent<Collections>().underWaterCollections;
+
 
             ship = Instantiate(ShipPrefab);
             ship.SetActive(false);
