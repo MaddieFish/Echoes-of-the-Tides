@@ -2341,11 +2341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bc411ef57fcd444bea74c413ba5cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisValues: {x: 0, y: 0}
+  axisValuesR: {x: 0, y: 0}
+  axisValuesL: {x: 0, y: 0}
   moveSpeed: 3
   rotSpeed: 200
-  pObject: {fileID: 6459759325075927135}
-  rb: {fileID: 0}
   speedH: 2
   speedV: 2
   xrController: 0
@@ -2426,11 +2425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bc411ef57fcd444bea74c413ba5cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisValues: {x: 0, y: 0}
+  axisValuesR: {x: 0, y: 0}
+  axisValuesL: {x: 0, y: 0}
   moveSpeed: 5
   rotSpeed: 200
-  pObject: {fileID: 0}
-  rb: {fileID: 0}
   speedH: 2
   speedV: 2
   xrController: 0
