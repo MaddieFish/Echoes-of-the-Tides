@@ -124,6 +124,11 @@ public class Artifact : MonoBehaviour
 
                 lighterAndBeer = true;
             }
+
+            if((beerAndWood && woodAndLighter) || (lighterAndBeer && beerAndWood) || (woodAndLighter && lighterAndBeer))
+            {
+                collections.AddToBeach("Bonfire");
+            }
         }
 
     }
@@ -131,6 +136,7 @@ public class Artifact : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         {
+            //If gameObject is Fish
             if (transform.parent.name == "Fish" && other.name == "Wood")
             {
                 collections.RemoveFromUnderwater("Sunken Ship");
@@ -140,23 +146,49 @@ public class Artifact : MonoBehaviour
                 collections.RemoveFromUnderwater("Strangled Fish");
             }
 
+            //If gameObject is Wood
             if (transform.parent.name == "Wood" && other.name == "Fish")
             {
                 collections.RemoveFromUnderwater("Sunken Ship");
             }
+            else if (transform.parent.name == "Wood" && other.name == "Beer")
+            { 
+                beerAndWood = false;
+            }
+            else if (transform.parent.name == "Wood" && other.name == "Lighter")
+            {
+                woodAndLighter = false;
+            }
 
+            //If gameObject is Beer
             if (transform.parent.name == "Beer" && other.name == "Fish")
             {
                 collections.RemoveFromUnderwater("Strangled Fish");
 
             }
-
-            if (gameObject.name == "Lighter")
+            else if (transform.parent.name == "Beer" && other.name == "Wood")
             {
-
+                beerAndWood = false;
+            }
+            else if (transform.parent.name == "Beer" && other.name == "Lighter")
+            {
+                lighterAndBeer = false;
             }
 
-      
+            //If gameObject is Lighter
+            if (transform.parent.name == "Lighter" && other.name == "Wood")
+            {
+                woodAndLighter = false;
+            }
+            else if (transform.parent.name == "Lighter" && other.name == "Beer")
+            {
+                lighterAndBeer = false;
+            }
+
+            if ((beerAndWood == false && woodAndLighter == false) || (lighterAndBeer == false && beerAndWood == false) || (woodAndLighter ==false && lighterAndBeer ==false))
+            {
+                collections.RemoveFromBeach("Bonfire");
+            }
         }
     }
 

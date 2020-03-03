@@ -72,7 +72,7 @@ public class Collections : MonoBehaviour
     public void AddToBeach(string beachObject)
     {
         if (!beachRecCollections.Contains(beachObject)){
-            underWaterCollections.Add(beachObject);
+            beachRecCollections.Add(beachObject);
         }
 
     }
