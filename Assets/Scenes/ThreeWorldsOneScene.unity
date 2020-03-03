@@ -972,14 +972,12 @@ MonoBehaviour:
   underWaterCollections: []
   beachRecCollections: []
   artifactsPlaced: []
+  groundCollision: 0
   ground: {fileID: 0}
   collections: {fileID: 0}
-  strangledFish: 0
-  sunkenShip: 0
   beerAndWood: 0
   woodAndLighter: 0
   lighterAndBeer: 0
-  bonfire: 0
 --- !u!1001 &152923844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1808,14 +1806,12 @@ MonoBehaviour:
   underWaterCollections: []
   beachRecCollections: []
   artifactsPlaced: []
+  groundCollision: 0
   ground: {fileID: 0}
   collections: {fileID: 0}
-  strangledFish: 0
-  sunkenShip: 0
   beerAndWood: 0
   woodAndLighter: 0
   lighterAndBeer: 0
-  bonfire: 0
 --- !u!1 &366383593 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4485749461791345256, guid: 22f41ec124c2cc94a93f176734246e03,
@@ -1837,14 +1833,12 @@ MonoBehaviour:
   underWaterCollections: []
   beachRecCollections: []
   artifactsPlaced: []
+  groundCollision: 0
   ground: {fileID: 0}
   collections: {fileID: 0}
-  strangledFish: 0
-  sunkenShip: 0
   beerAndWood: 0
   woodAndLighter: 0
   lighterAndBeer: 0
-  bonfire: 0
 --- !u!4 &399017369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8630490640019939094, guid: b9500cc29838bb747908047a23865cc0,
@@ -2665,14 +2659,12 @@ MonoBehaviour:
   underWaterCollections: []
   beachRecCollections: []
   artifactsPlaced: []
+  groundCollision: 0
   ground: {fileID: 0}
   collections: {fileID: 0}
-  strangledFish: 0
-  sunkenShip: 0
   beerAndWood: 0
   woodAndLighter: 0
   lighterAndBeer: 0
-  bonfire: 0
 --- !u!4 &890238744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2436133281495869305, guid: b5db3109d44eee94b9a51ff682523f18,
@@ -3573,8 +3565,6 @@ MonoBehaviour:
   beachRecCollections: []
   underWaterScene: 1
   beachRecScene: 0
-  strangledFish: 0
-  sunkenShip: 0
   beerAndWood: 0
   woodAndLighter: 0
   lighterAndBeer: 0
@@ -7348,7 +7338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2590648734076115747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1979.432, y: 1612.2695, z: 918.25946}
+  m_LocalPosition: {x: -1978.74, y: 1613.2, z: 913.84}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 3407936774023861469}
@@ -7813,7 +7803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2590648735080520818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1976.51, y: 1612.4116, z: 914.76}
+  m_LocalPosition: {x: -1978.11, y: 1612.4116, z: 913.87}
   m_LocalScale: {x: 6, y: 6, z: 8}
   m_Children:
   - {fileID: 503701126}
