@@ -38,6 +38,9 @@ public class ArtifactCollections : MonoBehaviour
 
     //private Vector3 underwaterPosition = portalLocation1.transform.position;
 
+    public bool overlapStarted;
+    public LayerMask layerMask;
+    
     void Start()
     {
         toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
@@ -46,43 +49,67 @@ public class ArtifactCollections : MonoBehaviour
         toUnderwaterWorld.SetActive(false);
         toBeachRecWorld.SetActive(false);
 
+        //overlapStarted = true;
+
         //currentScene = SceneManager.GetActiveScene();
         //string activeScene = currentScene.name;
     }
+
     //Only objects tagged "Artifact" can be collected and added to list
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
         {
-            collectedArtifacts.Add(col.gameObject);
-            print("You collected " + col.transform.name);
-            col.transform.parent = transform;
-            col.transform.SetParent(transform);
+            if (!collectedArtifacts.Contains(col.gameObject)){
+                collectedArtifacts.Add(col.gameObject);
+                print("You collected " + col.transform.name);
 
-            //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
+                col.transform.parent = transform;
+                col.transform.SetParent(transform);
 
-            //StartCoroutine(KinematicCoroutine());
-            //col.attachedRigidbody.isKinematic = true;
-
+                if (col.attachedRigidbody.isKinematic == false)
+                {
+                    StartCoroutine(KinematicCoroutine(col));
+                }
+            }
 
         }
 
     }
-    void OnTriggerExit(Collider col)
+  
+    void OnTriggerStay(Collider col)
     {
-        collectedArtifacts.Remove(col.gameObject);
-        print("You removed the " + col.transform.name);
-        //col.transform.parent = null;
-        col.transform.SetParent(null);
+        if (col.gameObject.CompareTag("Artifact") == true)
+        {
+            col.transform.parent = transform;
+            col.transform.SetParent(transform);
 
-        //col.attachedRigidbody.isKinematic = false;
+            //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
+        }
 
     }
-
-
-    IEnumerator KinematicCoroutine()
+ 
+    
+    void OnTriggerExit(Collider col)
     {
-        yield return new WaitForSecondsRealtime(5);
+        if (collectedArtifacts.Contains(col.gameObject))
+        {
+            collectedArtifacts.Remove(col.gameObject);
+            print("You removed the " + col.transform.name);
+            col.transform.parent = null;
+            col.transform.SetParent(null);
+
+            col.attachedRigidbody.isKinematic = false;
+        }
+
+
+    }
+ 
+
+    IEnumerator KinematicCoroutine(Collider col)
+    {
+        yield return new WaitForSecondsRealtime(2);
+        col.attachedRigidbody.isKinematic = true;
 
     }
 
@@ -92,15 +119,50 @@ public class ArtifactCollections : MonoBehaviour
     
         InstantiatePortal();
 
-        /*
+        //ArtifactsInPail();
+
+      
     if (currentScene.name == "Tests 3D Gameworld Beach")
     {
         InstantiatePortal();
     }
-    */
+   
+    }
+  
+    /*
+    void ArtifactsInPail()
+    {
+        //Use the OverlapBox to detect if there are any other colliders within this box area.
+        //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
+        Collider[] artifactColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, layerMask);
+        int i = 0;
+        //Check when there is a new collider coming into contact with the box
+        while (i < artifactColliders.Length)
+        {
+            if (!collectedArtifacts.Contains(artifactColliders[i].gameObject))
+            {
+                //Output all of the collider names
+                Debug.Log("Collected : " + artifactColliders[i].name + i);
+                collectedArtifacts.Add(artifactColliders[i].gameObject);
+
+            }
+            //Increase the number of Colliders in the array
+            i++;
+
+        }
     }
 
-    void SearchForCollection()
+    //Draw the Box Overlap as a gizmo to show where it currently is testing. Click the Gizmos button to see this
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
+        if (overlapStarted)
+            //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
+            Gizmos.DrawWireCube(transform.position, transform.localScale);
+    }
+    */
+void SearchForCollection()
     {      
         
         //Check if fish + beer is in list

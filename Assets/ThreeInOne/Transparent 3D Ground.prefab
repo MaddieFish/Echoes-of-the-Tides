@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8449222895829553932}
   - component: {fileID: 8449222895829553935}
   - component: {fileID: 8449222895829553934}
-  - component: {fileID: 8449222895829553930}
   - component: {fileID: 8449222895829553931}
+  - component: {fileID: 2513026875988550271}
   m_Layer: 0
   m_Name: Transparent 3D Ground
   m_TagString: Ground
@@ -96,30 +96,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8449222895829553930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8449222895829553937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c79ccb6d6dd9148a74bd4a0a50b9c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  artifactsPlaced: []
-  underWaterCollections: []
-  beachRecCollections: []
-  triggerDist: 2
-  underWaterScene: 0
-  beachRecScene: 1
-  strangledFish: 0
-  sunkenShip: 0
-  beerAndWood: 0
-  woodAndLighter: 0
-  lighterAndBeer: 0
-  bonfire: 0
 --- !u!65 &8449222895829553931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,3 +109,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2513026875988550271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449222895829553937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f553cbbc7de2f4588b3ef122e3d5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactsPlaced: []
+  artifacts: []
+  underWaterCollections: []
+  beachRecCollections: []
+  underWaterScene: 0
+  beachRecScene: 0
