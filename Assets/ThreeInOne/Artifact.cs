@@ -39,6 +39,8 @@ public class Artifact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic = false;
+
         collections = ground.GetComponent<Collections>();
 
         beachRecCollections = collections.beachRecCollections;
