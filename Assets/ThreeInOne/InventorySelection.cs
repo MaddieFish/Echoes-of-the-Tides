@@ -17,7 +17,6 @@ public class InventorySelection : MonoBehaviour
     public int _currentItemIndex = 0;
     public int index;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +38,13 @@ public class InventorySelection : MonoBehaviour
         }
         if (collectedArtifacts.Count > 0)
         {
-          
+            var hAxisKey = Input.GetAxisRaw("HorizontalR");
+            var hAxisThumb = Input.GetAxisRaw("Oculus_CrossPlatform_SecondaryThumbstickHorizontal");
 
-            if (Input.GetKeyDown("a"))
+            print(hAxisKey + ", " + hAxisThumb);
+
+            //if (Input.GetKeyDown("a"))
+            if (hAxisKey < -0.19 || hAxisThumb < -0.19)
             {
                 //? is to THEN, : is to ELSE
                 // IF _currentItemIndex > 0 IS TRUE THEN index EQUALS _currentItemIndex - 1 ELSE collectedArtifacts.Count - 1.
@@ -52,8 +55,12 @@ public class InventorySelection : MonoBehaviour
                 SelectItem(index);
                 //DeselectItem(index);
                 print("cycled back");
-            } 
-            else if (Input.GetKeyDown("d"))
+                //Input.ResetInputAxes();
+                StartCoroutine("DelayCoroutine");
+
+            }
+            //else if (Input.GetKeyDown("d"))
+            else if (hAxisKey > 0.19 || hAxisThumb > 0.19)
             {
                 //next item
                 passedItem = currentItem;
@@ -61,10 +68,16 @@ public class InventorySelection : MonoBehaviour
                 SelectItem(index);
                 //DeselectItem(index);
                 print("cycled forward");
-
+                StartCoroutine("DelayCoroutine");
             }
 
         }
+    }
+
+    IEnumerator DelayCoroutine()
+    {
+        Input.ResetInputAxes();
+        yield return new WaitForSecondsRealtime(1);
     }
 
     private void SelectItem(int index)
