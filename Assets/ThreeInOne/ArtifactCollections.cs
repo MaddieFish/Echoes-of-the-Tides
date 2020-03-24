@@ -68,14 +68,7 @@ public class ArtifactCollections : MonoBehaviour
                     //StartCoroutine(KinematicCoroutine(col));
                 }
 
-                if (currentItem != null && col.gameObject != currentItem)
-                {
-                    col.gameObject.SetActive(false);
-                } else
-                {
-                    col.gameObject.SetActive(true);
-
-                }
+                ArtifactInventoryToggle(col);
 
             }
 
@@ -93,16 +86,8 @@ public class ArtifactCollections : MonoBehaviour
             //col.transform.position = artifactSpawner.position;
 
             //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
-          
-            if (currentItem != null && col.gameObject != currentItem)
-            {
-                col.gameObject.SetActive(false);
-            }
-            else
-            {
-                col.gameObject.SetActive(true);
 
-            }
+            //ArtifactInventoryToggle(col);
         }
 
     }
@@ -126,6 +111,18 @@ public class ArtifactCollections : MonoBehaviour
 
     }
  
+    void ArtifactInventoryToggle(Collider col)
+    {
+        if (currentItem != null && col.gameObject != currentItem)
+        {
+            col.gameObject.SetActive(false);
+        }
+        else
+        {
+            col.gameObject.SetActive(true);
+
+        }
+    }
 
     IEnumerator KinematicCoroutine(Collider col)
     {
@@ -188,23 +185,23 @@ void SearchForCollection()
     void InstantiatePortal()
     {
 
-        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
+        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated && toUnderwaterWorld != null)
         {
             toUnderwaterWorld.SetActive(true);
             underwaterPortalIsCreated = true;
         }
-        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
+        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated)
         {
             toUnderwaterWorld.SetActive(false);
             underwaterPortalIsCreated = false;
         }
 
-        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
+        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated && toBeachRecWorld != null)
         {
             toBeachRecWorld.SetActive(true);
             beachRecPortalIsCreated = true;
         }
-        else if (beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
+        else if (beachRecCollections.Count == 0 && beachRecPortalIsCreated)
         {
             toBeachRecWorld.SetActive(false);
             beachRecPortalIsCreated = false;
@@ -212,29 +209,4 @@ void SearchForCollection()
     }
 }
 
-/*
-void InstantiatePortal()
-    {
-        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
-        {
-            Instantiate(underwaterPortalPrefab).transform.position = new Vector3(underwaterLocation.transform.position.x, underwaterLocation.transform.position.y, underwaterLocation.transform.position.z);
-            underwaterPortalIsCreated = true;
-        }
-        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
-        {
-            Destroy(Instantiate(underwaterPortalPrefab));
-            underwaterPortalIsCreated = false;
-        }
 
-        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
-        {
-            Instantiate(beachRecPortalPrefab).transform.position = new Vector3(beachRecLocation.transform.position.x, beachRecLocation.transform.position.y, beachRecLocation.transform.position.z);
-            beachRecPortalIsCreated = true;
-        } 
-        else if(beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
-        {
-            Destroy(Instantiate(beachRecPortalPrefab));
-            beachRecPortalIsCreated = false;
-        }
-    }
-    */
