@@ -41,6 +41,7 @@ public class Collections : MonoBehaviour
     {
 
     }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
