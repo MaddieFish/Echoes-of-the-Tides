@@ -14,42 +14,34 @@ public class ArtifactCollections : MonoBehaviour
     public List<string> underwaterCollections = new List<string>();
     public List<string> beachRecCollections = new List<string>();
 
+    //Inventory Spawner
+    public Transform artifactSpawner;
 
     //Artifact Collections
     public bool strangledFish = false;
     public bool bonfire = false;
     public bool sunkenShip = false;
 
-    //Move to different script
-    //public GameObject underwaterLocation;
-    //public GameObject beachRecLocation;
-
-    //public GameObject underwaterPortalPrefab;
-    //public GameObject beachRecPortalPrefab;
-
     public GameObject toUnderwaterWorld;
     public GameObject toBeachRecWorld;
-   
+
+    public GameObject currentItem;
 
     public bool underwaterPortalIsCreated;
     public bool beachRecPortalIsCreated;
 
     Scene currentScene;
-
-    //private Vector3 underwaterPosition = portalLocation1.transform.position;
-
-    public bool overlapStarted;
-    public LayerMask layerMask;
     
     void Start()
     {
         toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
         toBeachRecWorld = GameObject.Find("PortalToBeachRec360");
 
-        toUnderwaterWorld.SetActive(false);
-        toBeachRecWorld.SetActive(false);
-
-        //overlapStarted = true;
+        if (toUnderwaterWorld != null && toBeachRecWorld != null)
+        {
+            toUnderwaterWorld.SetActive(false);
+            toBeachRecWorld.SetActive(false);
+        }
 
         //currentScene = SceneManager.GetActiveScene();
         //string activeScene = currentScene.name;
@@ -67,10 +59,17 @@ public class ArtifactCollections : MonoBehaviour
                 col.transform.parent = transform;
                 col.transform.SetParent(transform);
 
+                col.transform.position = artifactSpawner.position;
+
                 if (col.attachedRigidbody.isKinematic == false)
                 {
-                    StartCoroutine(KinematicCoroutine(col));
+                    col.attachedRigidbody.isKinematic = true;
+
+                    //StartCoroutine(KinematicCoroutine(col));
                 }
+
+                ArtifactInventoryToggle(col);
+
             }
 
         }
@@ -84,7 +83,11 @@ public class ArtifactCollections : MonoBehaviour
             col.transform.parent = transform;
             col.transform.SetParent(transform);
 
+            //col.transform.position = artifactSpawner.position;
+
             //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
+
+            //ArtifactInventoryToggle(col);
         }
 
     }
@@ -100,68 +103,42 @@ public class ArtifactCollections : MonoBehaviour
             col.transform.SetParent(null);
 
             col.attachedRigidbody.isKinematic = false;
+
+            //col.gameObject.SetActive(true);
+
         }
 
 
     }
  
+    void ArtifactInventoryToggle(Collider col)
+    {
+        if (currentItem != null && col.gameObject != currentItem)
+        {
+            col.gameObject.SetActive(false);
+        }
+        else
+        {
+            col.gameObject.SetActive(true);
+
+        }
+    }
 
     IEnumerator KinematicCoroutine(Collider col)
     {
         yield return new WaitForSecondsRealtime(2);
         col.attachedRigidbody.isKinematic = true;
-
     }
 
     private void Update()
     {
+        currentItem = gameObject.GetComponentInParent<InventorySelection>().currentItem;
+
         SearchForCollection();
     
         InstantiatePortal();
-
-        //ArtifactsInPail();
-
-      
-    if (currentScene.name == "Tests 3D Gameworld Beach")
-    {
-        InstantiatePortal();
-    }
-   
-    }
-  
-    /*
-    void ArtifactsInPail()
-    {
-        //Use the OverlapBox to detect if there are any other colliders within this box area.
-        //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
-        Collider[] artifactColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, layerMask);
-        int i = 0;
-        //Check when there is a new collider coming into contact with the box
-        while (i < artifactColliders.Length)
-        {
-            if (!collectedArtifacts.Contains(artifactColliders[i].gameObject))
-            {
-                //Output all of the collider names
-                Debug.Log("Collected : " + artifactColliders[i].name + i);
-                collectedArtifacts.Add(artifactColliders[i].gameObject);
-
-            }
-            //Increase the number of Colliders in the array
-            i++;
-
-        }
     }
 
-    //Draw the Box Overlap as a gizmo to show where it currently is testing. Click the Gizmos button to see this
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
-        if (overlapStarted)
-            //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
-            Gizmos.DrawWireCube(transform.position, transform.localScale);
-    }
-    */
 void SearchForCollection()
     {      
         
@@ -207,23 +184,24 @@ void SearchForCollection()
     //Move to different script eventually
     void InstantiatePortal()
     {
-        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
+
+        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated && toUnderwaterWorld != null)
         {
             toUnderwaterWorld.SetActive(true);
             underwaterPortalIsCreated = true;
         }
-        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
+        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated)
         {
             toUnderwaterWorld.SetActive(false);
             underwaterPortalIsCreated = false;
         }
 
-        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
+        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated && toBeachRecWorld != null)
         {
             toBeachRecWorld.SetActive(true);
             beachRecPortalIsCreated = true;
         }
-        else if (beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
+        else if (beachRecCollections.Count == 0 && beachRecPortalIsCreated)
         {
             toBeachRecWorld.SetActive(false);
             beachRecPortalIsCreated = false;
@@ -231,29 +209,4 @@ void SearchForCollection()
     }
 }
 
-/*
-void InstantiatePortal()
-    {
-        if (underwaterCollections.Count > 0 && !underwaterPortalIsCreated)
-        {
-            Instantiate(underwaterPortalPrefab).transform.position = new Vector3(underwaterLocation.transform.position.x, underwaterLocation.transform.position.y, underwaterLocation.transform.position.z);
-            underwaterPortalIsCreated = true;
-        }
-        else if (underwaterCollections.Count == 0 && underwaterPortalIsCreated == true)
-        {
-            Destroy(Instantiate(underwaterPortalPrefab));
-            underwaterPortalIsCreated = false;
-        }
 
-        if (beachRecCollections.Count > 0 && !beachRecPortalIsCreated)
-        {
-            Instantiate(beachRecPortalPrefab).transform.position = new Vector3(beachRecLocation.transform.position.x, beachRecLocation.transform.position.y, beachRecLocation.transform.position.z);
-            beachRecPortalIsCreated = true;
-        } 
-        else if(beachRecCollections.Count == 0 && beachRecPortalIsCreated == true)
-        {
-            Destroy(Instantiate(beachRecPortalPrefab));
-            beachRecPortalIsCreated = false;
-        }
-    }
-    */

@@ -51,13 +51,7 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Ground"))
-        {
-            ground = other.gameObject;
-            print("found ground");
-            groundCollision = true;
-        }
-     
+        
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish
@@ -137,7 +131,7 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        {
+
             //If gameObject is Fish
             if (transform.parent.name == "Fish" && other.name == "Wood")
             {
@@ -191,7 +185,6 @@ public class Artifact : MonoBehaviour
             {
                 collections.RemoveFromBeach("Bonfire");
             }
-        }
     }
 
 }
