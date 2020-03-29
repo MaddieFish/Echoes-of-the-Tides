@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: ac4e6267de2471e42a0a4ec70427b7eb
+ModelImporter:
+  serializedVersion: 20100
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: broken
+  - first:
+      1: 100002
+    second: flag
+  - first:
+      1: 100004
+    second: paddle
+  - first:
+      1: 100006
+    second: paddle3
+  - first:
+      1: 100008
+    second: rock
+  - first:
+      1: 100010
+    second: ship
+  - first:
+      1: 100012
+    second: ship1
+  - first:
+      1: 100014
+    second: ship2
+  - first:
+      1: 100016
+    second: ship3
+  - first:
+      1: 100018
+    second: //RootNode
+  - first:
+      4: 400000
+    second: broken
+  - first:
+      4: 400002
+    second: flag
+  - first:
+      4: 400004
+    second: paddle
+  - first:
+      4: 400006
+    second: paddle3
+  - first:
+      4: 400008
+    second: rock
+  - first:
+      4: 400010
+    second: ship
+  - first:
+      4: 400012
+    second: ship1
+  - first:
+      4: 400014
+    second: ship2
+  - first:
+      4: 400016
+    second: ship3
+  - first:
+      4: 400018
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: lambert2
+  - first:
+      21: 2100002
+    second: lambert5
+  - first:
+      21: 2100004
+    second: lambert7
+  - first:
+      21: 2100006
+    second: lambert6
+  - first:
+      21: 2100008
+    second: lambert4
+  - first:
+      23: 2300000
+    second: broken
+  - first:
+      23: 2300002
+    second: flag
+  - first:
+      23: 2300004
+    second: paddle
+  - first:
+      23: 2300006
+    second: rock
+  - first:
+      23: 2300008
+    second: ship
+  - first:
+      33: 3300000
+    second: broken
+  - first:
+      33: 3300002
+    second: flag
+  - first:
+      33: 3300004
+    second: paddle
+  - first:
+      33: 3300006
+    second: rock
+  - first:
+      33: 3300008
+    second: ship
+  - first:
+      43: 4300000
+    second: ship
+  - first:
+      43: 4300002
+    second: rock
+  - first:
+      43: 4300004
+    second: flag
+  - first:
+      43: 4300006
+    second: paddle
+  - first:
+      43: 4300008
+    second: broken
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 8ff0b41bfaee4a14a8f86a3daa1c0861, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 5213f36096cfa3f43930189febcd4048, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: bddb335ed96fefc4f8e4604c6e9c4c6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: e5fe1e393b488e540b38a9f117baad24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 6aa9457a7bdec7e45b89619118440554, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: download
+    second: {fileID: 2800000, guid: b34d39031c154d64cbc56755997773e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: flag
+    second: {fileID: 2800000, guid: 5a907e895bf87e74e9ac0b54df84ea2c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: istockphoto-887350944-170667a
+    second: {fileID: 2800000, guid: 72a37f0490f01244b841675639d29f6f, type: 3}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
