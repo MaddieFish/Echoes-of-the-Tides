@@ -14,6 +14,8 @@ public class InventorySelection : MonoBehaviour
     public GameObject currentItem;
     public GameObject passedItem;
 
+    public bool enableCycle;
+
     public int _currentItemIndex = 0;
     public int index;
 
@@ -29,13 +31,16 @@ public class InventorySelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        collectedArtifacts = gameObject.GetComponentInChildren<ArtifactCollections>().collectedArtifacts;
+        //collectedArtifacts = gameObject.GetComponentInChildren<ArtifactCollections>().collectedArtifacts;
+        collectedArtifacts = gameObject.GetComponent<ArtifactCollections>().collectedArtifacts;
+
         if (collectedArtifacts.Count == 1)
         {
             print("objects in bucket");
             currentItem = collectedArtifacts[0];
             _currentItemIndex = 0;
         }
+
         if (collectedArtifacts.Count > 0)
         {
             var hAxisKey = Input.GetAxisRaw("HorizontalR");
@@ -43,34 +48,36 @@ public class InventorySelection : MonoBehaviour
 
             print(hAxisKey + ", " + hAxisThumb);
 
-            //if (Input.GetKeyDown("a"))
-            if (hAxisKey < -0.19 || hAxisThumb < -0.19)
+            if (enableCycle)
             {
-                //? is to THEN, : is to ELSE
-                // IF _currentItemIndex > 0 IS TRUE THEN index EQUALS _currentItemIndex - 1 ELSE collectedArtifacts.Count - 1.
+                //if (Input.GetKeyDown("a"))
+                if (hAxisKey < -0.19 || hAxisThumb < -0.19)
+                {
+                    //? is to THEN, : is to ELSE
+                    // IF _currentItemIndex > 0 IS TRUE THEN index EQUALS _currentItemIndex - 1 ELSE collectedArtifacts.Count - 1.
 
-                //previous item
-                index = _currentItemIndex > 0 ? _currentItemIndex - 1 : collectedArtifacts.Count - 1;
-                passedItem = currentItem;
-                SelectItem(index);
-                //DeselectItem(index);
-                print("cycled back");
-                //Input.ResetInputAxes();
-                StartCoroutine("DelayCoroutine");
+                    //previous item
+                    index = _currentItemIndex > 0 ? _currentItemIndex - 1 : collectedArtifacts.Count - 1;
+                    passedItem = currentItem;
+                    SelectItem(index);
+                    //DeselectItem(index);
+                    print("cycled back");
+                    //Input.ResetInputAxes();
+                    StartCoroutine("DelayCoroutine");
 
+                }
+                //else if (Input.GetKeyDown("d"))
+                else if (hAxisKey > 0.19 || hAxisThumb > 0.19)
+                {
+                    //next item
+                    passedItem = currentItem;
+                    index = _currentItemIndex == collectedArtifacts.Count - 1 ? 0 : _currentItemIndex + 1;
+                    SelectItem(index);
+                    //DeselectItem(index);
+                    print("cycled forward");
+                    StartCoroutine("DelayCoroutine");
+                }
             }
-            //else if (Input.GetKeyDown("d"))
-            else if (hAxisKey > 0.19 || hAxisThumb > 0.19)
-            {
-                //next item
-                passedItem = currentItem;
-                 index = _currentItemIndex == collectedArtifacts.Count - 1 ? 0 : _currentItemIndex + 1;
-                SelectItem(index);
-                //DeselectItem(index);
-                print("cycled forward");
-                StartCoroutine("DelayCoroutine");
-            }
-
         }
     }
 
@@ -96,6 +103,16 @@ public class InventorySelection : MonoBehaviour
         //remove passed object
         passedItem.transform.position = artifactSpawner.position;
         passedItem.SetActive(false);
+    }
+
+    public void EnableCycleThroughInventory()
+    {
+        enableCycle = true;
+    }
+
+    public void DisableCycleThroughInventory()
+    {
+        enableCycle = false;
     }
 
 }
