@@ -1578,7 +1578,7 @@ PrefabInstance:
     - target: {fileID: 2969044494792733262, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1590.82
+      value: 1591.33
       objectReference: {fileID: 0}
     - target: {fileID: 2969044494792733262, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
@@ -1640,6 +1640,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 5.94
       objectReference: {fileID: 0}
+    - target: {fileID: 6440261943857628512, guid: 9e9e8649981a50b4c861879252e0d773,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131534341878979610, guid: 9e9e8649981a50b4c861879252e0d773,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.788
+      objectReference: {fileID: 0}
     - target: {fileID: 7388543877622017051, guid: 9e9e8649981a50b4c861879252e0d773,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1649,6 +1659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565871808645238493, guid: 9e9e8649981a50b4c861879252e0d773,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.788
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5877310734222119220, guid: 9e9e8649981a50b4c861879252e0d773, type: 3}
@@ -9981,8 +9996,14 @@ MonoBehaviour:
   beachRecCollections: []
   artifactSpawner: {fileID: 0}
   strangledFish: 0
-  bonfire: 0
+  strangledTurtle: 0
   sunkenShip: 0
+  aquarium: 0
+  bonfire: 0
+  guitar: 0
+  cooler: 0
+  bonfireWithRack: 0
+  stereo: 0
   toUnderwaterWorld: {fileID: 0}
   toBeachRecWorld: {fileID: 0}
   currentItem: {fileID: 0}

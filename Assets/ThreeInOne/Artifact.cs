@@ -67,9 +67,22 @@ public class Artifact : MonoBehaviour
       
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (ground == null && other.CompareTag("Ground"))
+        {
+            groundCollision = true;
+            ground = other.gameObject;
+        }
+        else
+        {
+            groundCollision = false;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        
+ 
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish
@@ -144,7 +157,7 @@ public class Artifact : MonoBehaviour
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
-                lighterAndFish = true;
+                //lighterAndBeer = true;
             }
             else if (transform.parent.name == "Beer" && other.name == "Turtle Egg")
             {
@@ -277,11 +290,12 @@ public class Artifact : MonoBehaviour
             }
 
             //3 Artifact Combos
+          
             if ((fishAndWood && woodAndLighter) || (lighterAndFish && fishAndWood) || (woodAndLighter && lighterAndFish))
             {
                 collections.AddToBeach("Bonfire with Rack");
             }
-
+           
             if ((cdandMetal && metalandPlastic) || (plasticandCD && cdandMetal) || (metalandPlastic && plasticandCD))
             {
                 collections.AddToBeach("Stereo");
@@ -305,11 +319,22 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (ground != null && other.CompareTag("Ground"))
+        {
+            groundCollision = false;
+            ground = null;
+            collections = null;
+        }
+        else
+        {
+            groundCollision = true;
+        }
 
             //If gameObject is Fish
             if (transform.parent.name == "Fish" && other.name == "Wood")
-            {
+                {
                 collections.RemoveFromUnderwater("Sunken Ship");
+                fishAndWood = false;
             }
             else if (transform.parent.name == "Fish" && other.name == "Beer")
             {
@@ -320,10 +345,11 @@ public class Artifact : MonoBehaviour
                 lighterAndFish = false;
             }
 
-            //If gameObject is Wood
-            if (transform.parent.name == "Wood" && other.name == "Fish")
+        //If gameObject is Wood
+        if (transform.parent.name == "Wood" && other.name == "Fish")
             {
                 collections.RemoveFromUnderwater("Sunken Ship");
+                fishAndWood = false;
             }
             else if (transform.parent.name == "Wood" && other.name == "Beer")
             { 
@@ -375,7 +401,8 @@ public class Artifact : MonoBehaviour
             else if (transform.parent.name == "Lighter" && other.name == "Beer")
             {
                 //lighterAndBeer = false;
-            }else if (transform.parent.name == "Lighter" && other.name == "Fish")
+            }
+            else if (transform.parent.name == "Lighter" && other.name == "Fish")
             {
                 lighterAndFish = false;
             }
@@ -453,17 +480,18 @@ public class Artifact : MonoBehaviour
             }
 
         //3 Artifact Combos
-        if ((fishAndWood == false && woodAndLighter == false) || (lighterAndFish == false && fishAndWood == false) || (woodAndLighter == false && lighterAndFish == false))
+        
+        if ((!fishAndWood && !woodAndLighter) || (!lighterAndFish && !fishAndWood) || (!woodAndLighter && !lighterAndFish))
         {
             collections.RemoveFromBeach("Bonfire with Rack");
         }
 
-        if ((cdandMetal && metalandPlastic) || (plasticandCD && cdandMetal) || (metalandPlastic && plasticandCD))
+        if ((!cdandMetal && !metalandPlastic) || (!plasticandCD && cdandMetal) || (!metalandPlastic && plasticandCD))
         {
             collections.RemoveFromBeach("Stereo");
         }
 
-        if ((cdandMetal && metalandWire) || (wireAndCD && cdandMetal) || (metalandWire && wireAndCD))
+        if ((!cdandMetal && metalandWire) || (!wireAndCD && !cdandMetal) || (!metalandWire && !wireAndCD))
         {
             collections.RemoveFromBeach("Stereo");
         }
