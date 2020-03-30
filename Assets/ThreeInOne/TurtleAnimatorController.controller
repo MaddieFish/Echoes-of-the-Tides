@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -1188710934078725350, guid: a4487da90cd6224449d91dc58e49aadb,
+  m_Motion: {fileID: 3971553198578018277, guid: 4aa10fab6143d6842b42b80a612e1716,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -55,7 +55,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FishAnimatorController
+  m_Name: TurtleAnimatorController
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
