@@ -7,6 +7,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Attach script to pail GamObject that contains trigger collider
+//Keeps track of all artifacts collect and possible collections that can be fulfilled
+
 public class ArtifactCollections : MonoBehaviour
 {
     //List thet keeps track of artifacts in inventory
@@ -19,8 +22,17 @@ public class ArtifactCollections : MonoBehaviour
 
     //Artifact Collections
     public bool strangledFish = false;
-    public bool bonfire = false;
+    public bool strangledTurtle;
     public bool sunkenShip = false;
+    public bool aquarium;
+
+    public bool bonfire = false;
+    public bool guitar;
+    public bool cooler;
+
+    public bool bonfireWithRack;
+    public bool stereo;
+
 
     public GameObject toUnderwaterWorld;
     public GameObject toBeachRecWorld;
@@ -145,12 +157,35 @@ void SearchForCollection()
         //Check if fish + beer is in list
         strangledFish = collectedArtifacts.Any((GameObject) => GameObject.name == "Fish") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
 
-        //Check if lighter + wood + beer is in list
-        bonfire = collectedArtifacts.Any((GameObject) => GameObject.name == "Lighter") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wood") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
-
+        //Check if turtle egg + beer is in list
+        strangledTurtle = collectedArtifacts.Any((GameObject) => GameObject.name == "Turtle Egg") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
+       
         //Check if wood + fish is in list
         sunkenShip = collectedArtifacts.Any((GameObject) => GameObject.name == "Fish") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wood");
 
+        //Check if fish + glass is in list
+        aquarium = collectedArtifacts.Any((GameObject) => GameObject.name == "Fish") && collectedArtifacts.Any((GameObject) => GameObject.name == "Glass");
+
+        //Check if wood + lighter is in list
+        bonfire = collectedArtifacts.Any((GameObject) => GameObject.name == "Wood") && collectedArtifacts.Any((GameObject) => GameObject.name == "Lighter");
+
+        //Check if wood + wire is in list
+        guitar = collectedArtifacts.Any((GameObject) => GameObject.name == "Wood") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wire");
+
+        //Check if plastic + beer is in list
+        cooler = collectedArtifacts.Any((GameObject) => GameObject.name == "Plastic") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
+
+        //Check if lighter + wood + fish is in list
+        bonfireWithRack = collectedArtifacts.Any((GameObject) => GameObject.name == "Lighter") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wood") && collectedArtifacts.Any((GameObject) => GameObject.name == "Fish");
+
+        //Check if CD + wire + metal is in list
+        stereo = collectedArtifacts.Any((GameObject) => GameObject.name == "CD") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wire") && collectedArtifacts.Any((GameObject) => GameObject.name == "Metal");
+
+        //Check if CD + plastic + metal is in list
+        stereo = collectedArtifacts.Any((GameObject) => GameObject.name == "CD") && collectedArtifacts.Any((GameObject) => GameObject.name == "Plastic") && collectedArtifacts.Any((GameObject) => GameObject.name == "Metal");
+
+        //Check if lighter + wood + beer is in list
+        //bonfire = collectedArtifacts.Any((GameObject) => GameObject.name == "Lighter") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wood") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
 
         //Add completed collections and remove broken collections to related environmentCollection
         if (strangledFish == true && underwaterCollections.Contains("Strangled Fish") == false)
@@ -162,6 +197,33 @@ void SearchForCollection()
             underwaterCollections.Remove("Strangled Fish");
         }
 
+        if (strangledTurtle == true && underwaterCollections.Contains("Strangled Turtle") == false)
+        {
+            underwaterCollections.Add("Strangled Turtle");
+        }
+        else if (strangledTurtle == false && underwaterCollections.Contains("Strangled Turtle") == true)
+        {
+            underwaterCollections.Remove("Strangled Turtle");
+        }
+
+        if (sunkenShip == true && underwaterCollections.Contains("Sunken Ship") == false)
+        {
+            underwaterCollections.Add("Sunken Ship");
+        }
+        else if (sunkenShip == false && underwaterCollections.Contains("Sunken Ship") == true)
+        {
+            underwaterCollections.Remove("Sunken Ship");
+        }
+
+        if (aquarium == true && underwaterCollections.Contains("Aquarium") == false)
+        {
+            underwaterCollections.Add("Aquarium");
+        }
+        else if (aquarium == false && underwaterCollections.Contains("Aquarium") == true)
+        {
+            underwaterCollections.Remove("Aquarium");
+        }
+
         if (bonfire == true && beachRecCollections.Contains("Bonfire") == false)
         {
             beachRecCollections.Add("Bonfire");
@@ -171,13 +233,40 @@ void SearchForCollection()
             beachRecCollections.Remove("Bonfire");
         }
 
-        if (sunkenShip == true && underwaterCollections.Contains("Sunken Ship") == false)
+        if (guitar == true && beachRecCollections.Contains("Guitar") == false)
         {
-            underwaterCollections.Add("Sunken Ship");
-        } 
-        else if (sunkenShip == false && underwaterCollections.Contains("Sunken Ship") == true)
+            beachRecCollections.Add("Guitar");
+        }
+        else if (guitar == false && beachRecCollections.Contains("Guitar") == true)
         {
-            underwaterCollections.Remove("Sunken Ship");
+            beachRecCollections.Remove("Guitar");
+        }
+
+        if (cooler == true && beachRecCollections.Contains("Cooler") == false)
+        {
+            beachRecCollections.Add("Cooler");
+        }
+        else if (cooler == false && beachRecCollections.Contains("Cooler") == true)
+        {
+            beachRecCollections.Remove("Cooler");
+        }
+
+        if (bonfireWithRack == true && beachRecCollections.Contains("Bonfire with Rack") == false)
+        {
+            beachRecCollections.Add("Bonfire with Rack");
+        }
+        else if (bonfireWithRack == false && beachRecCollections.Contains("Bonfire with Rack") == true)
+        {
+            beachRecCollections.Remove("Bonfire with Rack");
+        }
+
+        if (stereo == true && beachRecCollections.Contains("Stereo") == false)
+        {
+            beachRecCollections.Add("Stereo");
+        }
+        else if (stereo == false && beachRecCollections.Contains("Stereo") == true)
+        {
+            beachRecCollections.Remove("Stereo");
         }
     }
 

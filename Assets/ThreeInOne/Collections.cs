@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Attach script to ground in scene
+//Keeps track of collections fulfilled
 public class Collections : MonoBehaviour
 {
     //Artifact collection lists
