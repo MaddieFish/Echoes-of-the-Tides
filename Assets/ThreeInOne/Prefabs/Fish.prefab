@@ -55,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7169872121254275173
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7169872121254275173}
   m_LocalRotation: {x: -0, y: 0.7083275, z: -0, w: 0.70588404}
-  m_LocalPosition: {x: -2024.4259, y: 1615.4402, z: 906.26}
-  m_LocalScale: {x: 0.063028365, y: 0.06302836, z: 0.063028365}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3334556, y: 0.4066524, z: 0.395205}
   m_Children:
   - {fileID: 4446467502456883534}
   - {fileID: 5213955394050888785}
@@ -140,7 +142,7 @@ BoxCollider:
   m_GameObject: {fileID: 7169872121254275173}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.591203, y: 1.731508, z: 0.69764245}
   m_Center: {x: -0.5864947, y: 0.014629832, z: -0.0048771068}
@@ -227,8 +229,8 @@ MeshCollider:
   m_GameObject: {fileID: 7169872121254275173}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
+  m_Enabled: 0
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
@@ -257,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 8865626278916762524, guid: 22f41ec124c2cc94a93f176734246e03,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 8865626278916762524, guid: 22f41ec124c2cc94a93f176734246e03,
         type: 3}
