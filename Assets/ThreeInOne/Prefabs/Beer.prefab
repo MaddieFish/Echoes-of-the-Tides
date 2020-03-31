@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 83103013611012072}
   m_LocalRotation: {x: -0, y: 0.7083275, z: -0, w: 0.70588404}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 43.11465, y: 44.363586, z: 36.378284}
+  m_LocalScale: {x: 9.084696, y: 9.08464, z: 9.084626}
   m_Children:
   - {fileID: 6475578872509059177}
   - {fileID: 2649270805934770003}
@@ -97,10 +97,10 @@ BoxCollider:
   m_GameObject: {fileID: 83103013611012072}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.009682655, y: 0.016321838, z: 0.010456872}
-  m_Center: {x: -0.00011843443, y: 0.02612558, z: 0.0000551329}
+  m_Center: {x: -0.00011843443, y: 0, z: 0.0000551329}
 --- !u!54 &83103013611012074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &83103013611012073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MeshCollider:
   m_GameObject: {fileID: 83103013611012072}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 2649270805934770003}
   - component: {fileID: 2649270805937670001}
   - component: {fileID: 2649270805936670129}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
