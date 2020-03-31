@@ -110,8 +110,8 @@ public class PlayerScript : MonoBehaviour
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
         */
 
-        transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+        //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(axisValuesL.x * Time.deltaTime * moveSpeed, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
 
         //transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
 
