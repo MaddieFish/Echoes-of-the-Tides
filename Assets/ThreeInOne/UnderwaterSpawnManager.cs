@@ -30,7 +30,11 @@ public class UnderwaterSpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        shipSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        strangledFishSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        strangledTurtleSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        aquariumSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+
 
         if (ground != null)
         {

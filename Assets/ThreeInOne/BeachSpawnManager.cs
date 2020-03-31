@@ -39,7 +39,12 @@ public class BeachSpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        bonfireSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        bonfireWithRackSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        coolerSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        guitarSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        stereoSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        turtleHatchSpawner.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
         if (ground != null)
         {
@@ -69,6 +74,11 @@ public class BeachSpawnManager : MonoBehaviour
             stereo = Instantiate(stereoPrefab);
             stereo.SetActive(false);
             stereo.transform.position = new Vector3(stereoSpawner.position.x, stereoSpawner.position.y, stereoSpawner.position.z);
+
+            //Stereo Spawn
+            turtleHatch = Instantiate(turtleHatchPrefab);
+            turtleHatch.SetActive(false);
+            turtleHatch.transform.position = new Vector3(turtleHatchSpawner.position.x, turtleHatchSpawner.position.y, turtleHatchSpawner.position.z);
         }
     }
     // Update is called once per frame
@@ -132,6 +142,18 @@ public class BeachSpawnManager : MonoBehaviour
         {
             stereoPlaced = false;
             stereo.SetActive(false);
+        }
+
+        //Turtle Hatch Spawn
+        if (beachRecCollections.Contains("Turtle Hatch") == true && turtleHatchPlaced == false)
+        {
+            turtleHatchPlaced = true;
+            turtleHatch.SetActive(true);
+        }
+        else if (turtleHatchPlaced == true && beachRecCollections.Contains("Turtle Hatch") == false)
+        {
+            turtleHatchPlaced = false;
+            turtleHatch.SetActive(false);
         }
     }
 }

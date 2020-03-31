@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6603950696355640964}
   - component: {fileID: 6603950696355640963}
   m_Layer: 0
-  m_Name: StrangledFishSpawner
+  m_Name: AquariumSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

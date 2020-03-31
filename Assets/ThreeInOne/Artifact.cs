@@ -210,7 +210,7 @@ public class Artifact : MonoBehaviour
             else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
-                collections.AddToUnderwater("Turtle Hatch");
+                collections.AddToBeach("Turtle Hatch");
             }
 
             //If gameObject is Plastic (plastic box or container)
@@ -406,7 +406,7 @@ public class Artifact : MonoBehaviour
             }
             else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
             {
-                collections.RemoveFromUnderwater("Turtle Hatch");
+                collections.RemoveFromBeach("Turtle Hatch");
             }
 
             //If gameObject is CD
