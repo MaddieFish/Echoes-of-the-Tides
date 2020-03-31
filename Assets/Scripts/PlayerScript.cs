@@ -115,8 +115,8 @@ public class PlayerScript : MonoBehaviour
 
         //transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
 
-        transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
-
+        transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
+        transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
 
         //transform.Rotate(0, Camera.main.transform.rotation.y, 0);
         //transform.Translate(-Camera.main.transform.right * moveSpeed * Input.GetAxis("VerticalR") * Time.deltaTime);

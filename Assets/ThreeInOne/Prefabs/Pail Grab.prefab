@@ -389,7 +389,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 2.16, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -6.813965, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -6.813632, z: 0}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -436,6 +436,7 @@ MonoBehaviour:
   bonfire: 0
   guitar: 0
   cooler: 0
+  turtleHatching: 0
   bonfireWithRack: 0
   stereo: 0
   toUnderwaterWorld: {fileID: 0}
@@ -584,7 +585,7 @@ GameObject:
   - component: {fileID: 3540826287667277574}
   - component: {fileID: 3540826287667277627}
   - component: {fileID: 3540826287667277626}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Pail Grab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,6 +997,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8933767359455493346, guid: 09ae69939d5956245abc197a1ac3f3ff,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8933767359455493350, guid: 09ae69939d5956245abc197a1ac3f3ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1186,6 +1192,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 83103013611012074, guid: 6c2c59d38b80c204ca37b7544e242b47,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 83103013611012078, guid: 6c2c59d38b80c204ca37b7544e242b47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1260,6 +1271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198359522589821309, guid: 37f320c1c60089e49b313f1849848abf,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1198359522589821310, guid: 37f320c1c60089e49b313f1849848abf,
         type: 3}
@@ -1720,6 +1736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022797966194017194, guid: 437c940975455e348a2e083ad2f73701,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6843968603353817030, guid: 437c940975455e348a2e083ad2f73701,
         type: 3}
