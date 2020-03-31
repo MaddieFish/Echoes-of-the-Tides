@@ -29,6 +29,7 @@ public class ArtifactCollections : MonoBehaviour
     public bool bonfire = false;
     public bool guitar;
     public bool cooler;
+    public bool turtleHatching;
 
     public bool bonfireWithRack;
     public bool stereo;
@@ -159,7 +160,10 @@ void SearchForCollection()
 
         //Check if turtle egg + beer is in list
         strangledTurtle = collectedArtifacts.Any((GameObject) => GameObject.name == "Turtle Egg") && collectedArtifacts.Any((GameObject) => GameObject.name == "Beer");
-       
+
+        //Check if turtle egg + turtle egg is in list
+        strangledTurtle = collectedArtifacts.Any((GameObject) => GameObject.name == "Turtle Egg") && collectedArtifacts.Any((GameObject) => GameObject.name == "Turtle Egg");
+
         //Check if wood + fish is in list
         sunkenShip = collectedArtifacts.Any((GameObject) => GameObject.name == "Fish") && collectedArtifacts.Any((GameObject) => GameObject.name == "Wood");
 
@@ -204,6 +208,15 @@ void SearchForCollection()
         else if (strangledTurtle == false && underwaterCollections.Contains("Strangled Turtle") == true)
         {
             underwaterCollections.Remove("Strangled Turtle");
+        }
+
+        if (turtleHatching == true && underwaterCollections.Contains("Turtle Hatch") == false)
+        {
+            underwaterCollections.Add("Turtle Hatch");
+        }
+        else if (turtleHatching == false && underwaterCollections.Contains("Turtle Hatch") == true)
+        {
+            underwaterCollections.Remove("Turtle Hatch");
         }
 
         if (sunkenShip == true && underwaterCollections.Contains("Sunken Ship") == false)

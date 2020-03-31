@@ -24,6 +24,7 @@ public class Artifact : MonoBehaviour
     public bool bonfire;
     public bool aquarium;
     public bool cooler;
+    public bool turtleHatching;
 
     //3 combo collections
     //public bool beerAndWood;
@@ -41,20 +42,6 @@ public class Artifact : MonoBehaviour
 
     public bool metalandWire;
     public bool wireAndCD;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        /*
-        strangledFish = collections.strangledFish;
-        sunkenShip = collections.sunkenShip;
-
-        bonfire = collections.bonfire;
-        beerAndWood = collections.beerAndWood;
-        woodAndLighter = collections.woodAndLighter;
-        lighterAndBeer = collections.lighterAndBeer;
-        */
-    }
 
     // Update is called once per frame
     void Update()
@@ -220,9 +207,14 @@ public class Artifact : MonoBehaviour
 
                 collections.AddToUnderwater("Strangled Turtle");
             }
+            else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+                collections.AddToUnderwater("Turtle Hatch");
+            }
 
             //If gameObject is Plastic (plastic box or container)
-            if(transform.parent.name == "Plastic" && other.name == "CD")
+            if (transform.parent.name == "Plastic" && other.name == "CD")
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
@@ -411,6 +403,10 @@ public class Artifact : MonoBehaviour
             if (transform.parent.name == "Turtle Egg" && other.name == "Beer")
             {
                 collections.RemoveFromUnderwater("Strangled Turtle");
+            }
+            else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
+            {
+                collections.RemoveFromUnderwater("Turtle Hatch");
             }
 
             //If gameObject is CD

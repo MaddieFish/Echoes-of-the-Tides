@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6603950696355640962}
   - component: {fileID: 6603950696355640965}
   - component: {fileID: 6603950696355640964}
-  - component: {fileID: 6603950696355640963}
+  - component: {fileID: 1658491573998332441}
   m_Layer: 0
-  m_Name: StrangledFishSpawner
+  m_Name: StrangledTurtleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6603950696355640967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.1, y: 0.83, z: -6.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6603950696355640963
+--- !u!114 &1658491573998332441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,11 +91,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6603950696355640967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5756a07fea8466144af76c6b3c159868, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b9c5a75b844b174da00e4189389cc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StrangledFishPrefab: {fileID: 4204698304616181289, guid: 6585eacefeebe1d4e9a09aca83052ef8,
+  StrangledTurtlePrefab: {fileID: 4204698304616181289, guid: a3574238371136443989893c18a9823e,
     type: 3}
   underWaterCollections: []
-  strangledFishPlaced: 0
+  strangledTurtlePlaced: 0
   ground: {fileID: 0}

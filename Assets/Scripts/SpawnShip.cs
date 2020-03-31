@@ -38,8 +38,7 @@ public class SpawnShip : MonoBehaviour
             shipPlaced = true;
             ship.SetActive(true);
 
-            //ship = Instantiate(ShipPrefab);
-            //ship.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+          
         }
         else if (shipPlaced == true && underWaterCollections.Contains("Sunken Ship") == false)
         {

@@ -1,8 +1,17 @@
 fileFormatVersion: 2
-guid: 78cf8418afaf68342b69b9a453d331db
+guid: 6131942e7b1a7b3409c9dfc7e1a3fab2
 ModelImporter:
   serializedVersion: 20100
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3451645872446874979
+    second: TurtleHatchRight|Action
+  - first:
+      74: -2105990243537061506
+    second: TurtleHatchRight|Action.001
+  - first:
+      74: -4285858179897208450
+    second: TurtleHatchRight|Action.002
   externalObjects: {}
   materials:
     materialImportMode: 1
