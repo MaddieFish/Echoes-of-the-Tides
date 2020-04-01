@@ -102,5 +102,17 @@ public class UnderwaterSpawnManager : MonoBehaviour
             strangledTurtlePlaced = false;
             strangledTurtle.SetActive(false);
         }
+
+        //Aquarium Spawn
+        if (underWaterCollections.Contains("Aquarium") == true && aquariumPlaced == false)
+        {
+            aquariumPlaced = true;
+            aquarium.SetActive(true);
+        }
+        else if (aquariumPlaced == true && underWaterCollections.Contains("Aquarium") == false)
+        {
+            aquariumPlaced = false;
+            aquarium.SetActive(false);
+        }
     }
 }

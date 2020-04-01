@@ -97,7 +97,9 @@ public class PlayerScript : MonoBehaviour
         Debug.Log(axisValuesL);
 
         var hLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickHorizontal");
+        var vLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickVertical");
         var hRightThumb = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickHorizontal");
+        var vRightThumb = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickVertical");
 
 
         /*
@@ -110,17 +112,16 @@ public class PlayerScript : MonoBehaviour
         pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
         */
 
-        //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
-        //transform.Translate(axisValuesL.x * Time.deltaTime * moveSpeed, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+        transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
+        transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+
+        //transform.Rotate(0, hLeftThumb * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(0, 0, vLeftThumb * Time.deltaTime * moveSpeed);
+
+
+        //transform.Translate(-Camera.main.transform.right * moveSpeed * vLeftThumb * Time.deltaTime);
 
         //transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
-
-        transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
-
-
-        //transform.Rotate(0, Camera.main.transform.rotation.y, 0);
-        //transform.Translate(-Camera.main.transform.right * moveSpeed * Input.GetAxis("VerticalR") * Time.deltaTime);
-
 
     }
 
