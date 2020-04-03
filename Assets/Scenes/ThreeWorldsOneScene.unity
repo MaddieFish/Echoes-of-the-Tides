@@ -449,7 +449,6 @@ GameObject:
   - component: {fileID: 185663569}
   - component: {fileID: 185663572}
   - component: {fileID: 185663573}
-  - component: {fileID: 185663574}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -572,27 +571,6 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
---- !u!114 &185663574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185663568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bc411ef57fcd444bea74c413ba5cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axisValuesR: {x: 0, y: 0}
-  axisValuesL: {x: 0, y: 0}
-  moveSpeed: 5
-  rotSpeed: 200
-  speedH: 2
-  speedV: 2
-  xrController: 0
-  keyboardControls: 0
-  mouseCameraRotation: 0
 --- !u!1001 &186294634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1169,6 +1147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 272967249074055146, guid: b9500cc29838bb747908047a23865cc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 866958643749481722, guid: b9500cc29838bb747908047a23865cc0,
         type: 3}
@@ -2134,12 +2117,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axisValuesR: {x: 0, y: 0}
   axisValuesL: {x: 0, y: 0}
-  moveSpeed: 5
-  rotSpeed: 100
+  moveSpeed: 0.15
+  rotSpeed: 50
   speedH: 2
   speedV: 2
-  xrController: 1
-  keyboardControls: 1
+  xrController: 0
+  keyboardControls: 0
   mouseCameraRotation: 0
 --- !u!136 &567601280
 CapsuleCollider:
@@ -3744,7 +3727,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
@@ -3869,7 +3852,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
@@ -3933,7 +3916,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
@@ -4061,6 +4044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 272967249074055146, guid: b9500cc29838bb747908047a23865cc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 866958643749481722, guid: b9500cc29838bb747908047a23865cc0,
         type: 3}
@@ -4419,7 +4407,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
@@ -7683,7 +7671,7 @@ ReflectionProbe:
   serializedVersion: 2
   m_Type: 0
   m_Mode: 1
-  m_RefreshMode: 1
+  m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0

@@ -46,12 +46,17 @@ public class Artifact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        collections = ground.GetComponent<Collections>();
+        if (ground != null)
+        {
+            collections = ground.GetComponent<Collections>();
+        }
+        if (collections != null)
+        {
+            beachRecCollections = collections.beachRecCollections;
+            underWaterCollections = collections.underWaterCollections;
+            artifactsPlaced = collections.artifacts;
+        }
 
-        beachRecCollections = collections.beachRecCollections;
-        underWaterCollections = collections.underWaterCollections;
-        artifactsPlaced = collections.artifacts;
-      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,7 +74,7 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
- 
+
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish
@@ -80,7 +85,7 @@ public class Artifact : MonoBehaviour
                 collections.AddToUnderwater("Sunken Ship");
 
                 fishAndWood = true;
-            } 
+            }
             else if (transform.parent.name == "Fish" && other.name == "Beer")
             {
                 collections.AddToUnderwater("Strangled Fish");
@@ -181,7 +186,7 @@ public class Artifact : MonoBehaviour
             }
 
             //If gameObject is CD
-            if(transform.parent.name == "CD" && other.name == "Plastic")
+            if (transform.parent.name == "CD" && other.name == "Plastic")
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
@@ -282,12 +287,12 @@ public class Artifact : MonoBehaviour
             }
 
             //3 Artifact Combos
-          
+
             if ((fishAndWood && woodAndLighter) || (lighterAndFish && fishAndWood) || (woodAndLighter && lighterAndFish))
             {
                 collections.AddToBeach("Bonfire with Rack");
             }
-           
+
             if ((cdandMetal && metalandPlastic) || (plasticandCD && cdandMetal) || (metalandPlastic && plasticandCD))
             {
                 collections.AddToBeach("Stereo");
@@ -322,161 +327,166 @@ public class Artifact : MonoBehaviour
             groundCollision = true;
         }
 
-            //If gameObject is Fish
-            if (transform.parent.name == "Fish" && other.name == "Wood")
-                {
-                collections.RemoveFromUnderwater("Sunken Ship");
-                fishAndWood = false;
-            }
-            else if (transform.parent.name == "Fish" && other.name == "Beer")
-            {
-                collections.RemoveFromUnderwater("Strangled Fish");
-            }
-            else if (transform.parent.name == "Fish" && other.name == "Lighter")
-            {
-                lighterAndFish = false;
-            }
+        if (collections == null)
+        {
+            return;
+        }
+
+        //If gameObject is Fish
+        if (transform.parent.name == "Fish" && other.name == "Wood")
+        {
+            collections.RemoveFromUnderwater("Sunken Ship");
+            fishAndWood = false;
+        }
+        else if (transform.parent.name == "Fish" && other.name == "Beer")
+        {
+            collections.RemoveFromUnderwater("Strangled Fish");
+        }
+        else if (transform.parent.name == "Fish" && other.name == "Lighter")
+        {
+            lighterAndFish = false;
+        }
 
         //If gameObject is Wood
         if (transform.parent.name == "Wood" && other.name == "Fish")
-            {
-                collections.RemoveFromUnderwater("Sunken Ship");
-                fishAndWood = false;
-            }
-            else if (transform.parent.name == "Wood" && other.name == "Beer")
-            { 
-                //beerAndWood = false;
-            }
-            else if (transform.parent.name == "Wood" && other.name == "Lighter")
-            {
-                woodAndLighter = false;
-                collections.RemoveFromBeach("Bonfire");
-            }
-            else if (transform.parent.name == "Wood" && other.name == "Glass")
-            {
-                collections.RemoveFromUnderwater("Aquarium");
-            }
-            else if (transform.parent.name == "Wood" && other.name == "Wire")
-            {
-                collections.RemoveFromBeach("Guitar");
-            }
+        {
+            collections.RemoveFromUnderwater("Sunken Ship");
+            fishAndWood = false;
+        }
+        else if (transform.parent.name == "Wood" && other.name == "Beer")
+        {
+            //beerAndWood = false;
+        }
+        else if (transform.parent.name == "Wood" && other.name == "Lighter")
+        {
+            woodAndLighter = false;
+            collections.RemoveFromBeach("Bonfire");
+        }
+        else if (transform.parent.name == "Wood" && other.name == "Glass")
+        {
+            collections.RemoveFromUnderwater("Aquarium");
+        }
+        else if (transform.parent.name == "Wood" && other.name == "Wire")
+        {
+            collections.RemoveFromBeach("Guitar");
+        }
 
-            //If gameObject is Beer
-            if (transform.parent.name == "Beer" && other.name == "Fish")
-            {
-                collections.RemoveFromUnderwater("Strangled Fish");
+        //If gameObject is Beer
+        if (transform.parent.name == "Beer" && other.name == "Fish")
+        {
+            collections.RemoveFromUnderwater("Strangled Fish");
 
-            }
-            else if (transform.parent.name == "Beer" && other.name == "Wood")
-            {
-                //beerAndWood = false;
-            }
-            else if (transform.parent.name == "Beer" && other.name == "Lighter")
-            {
-                //lighterAndBeer = false;
-            }
-            else if (transform.parent.name == "Beer" && other.name == "Turtle Egg")
-            {
-                collections.RemoveFromUnderwater("Strangled Turtle");
-            }
-            else if (transform.parent.name == "Beer" && other.name == "Plastic")
-            {
-                collections.RemoveFromBeach("Cooler");
-            }
+        }
+        else if (transform.parent.name == "Beer" && other.name == "Wood")
+        {
+            //beerAndWood = false;
+        }
+        else if (transform.parent.name == "Beer" && other.name == "Lighter")
+        {
+            //lighterAndBeer = false;
+        }
+        else if (transform.parent.name == "Beer" && other.name == "Turtle Egg")
+        {
+            collections.RemoveFromUnderwater("Strangled Turtle");
+        }
+        else if (transform.parent.name == "Beer" && other.name == "Plastic")
+        {
+            collections.RemoveFromBeach("Cooler");
+        }
 
-            //If gameObject is Lighter
-            if (transform.parent.name == "Lighter" && other.name == "Wood")
-            {
-                woodAndLighter = false;
-                collections.RemoveFromBeach("Bonfire");
-            }
-            else if (transform.parent.name == "Lighter" && other.name == "Beer")
-            {
-                //lighterAndBeer = false;
-            }
-            else if (transform.parent.name == "Lighter" && other.name == "Fish")
-            {
-                lighterAndFish = false;
-            }
+        //If gameObject is Lighter
+        if (transform.parent.name == "Lighter" && other.name == "Wood")
+        {
+            woodAndLighter = false;
+            collections.RemoveFromBeach("Bonfire");
+        }
+        else if (transform.parent.name == "Lighter" && other.name == "Beer")
+        {
+            //lighterAndBeer = false;
+        }
+        else if (transform.parent.name == "Lighter" && other.name == "Fish")
+        {
+            lighterAndFish = false;
+        }
 
-            //If gameObject is Turtle Egg
-            if (transform.parent.name == "Turtle Egg" && other.name == "Beer")
-            {
-                collections.RemoveFromUnderwater("Strangled Turtle");
-            }
-            else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
-            {
-                collections.RemoveFromBeach("Turtle Hatch");
-            }
+        //If gameObject is Turtle Egg
+        if (transform.parent.name == "Turtle Egg" && other.name == "Beer")
+        {
+            collections.RemoveFromUnderwater("Strangled Turtle");
+        }
+        else if (transform.parent.name == "Turtle Egg" && other.name == "Turtle Egg")
+        {
+            collections.RemoveFromBeach("Turtle Hatch");
+        }
 
-            //If gameObject is CD
-            if (transform.parent.name == "CD" && other.name == "Plastic")
-            {
-                plasticandCD = false;
-            }
-            else if (transform.parent.name == "CD" && other.name == "Metal")
-            {
-                cdandMetal = false;
-            }
-            else if (transform.parent.name == "CD" && other.name == "Wire")
-            {
-                wireAndCD = false;
-            }
-            else if (transform.parent.name == "CD" && other.name == "Metal")
-            {
-                metalandWire = false;
-            }
+        //If gameObject is CD
+        if (transform.parent.name == "CD" && other.name == "Plastic")
+        {
+            plasticandCD = false;
+        }
+        else if (transform.parent.name == "CD" && other.name == "Metal")
+        {
+            cdandMetal = false;
+        }
+        else if (transform.parent.name == "CD" && other.name == "Wire")
+        {
+            wireAndCD = false;
+        }
+        else if (transform.parent.name == "CD" && other.name == "Metal")
+        {
+            metalandWire = false;
+        }
 
-            //If gameObject is Plastic (plastic box or container)
-            if (transform.parent.name == "Plastic" && other.name == "CD")
-            {
-                plasticandCD = false;
-            }
-            else if (transform.parent.name == "Plastic" && other.name == "Metal")
-            {
-                metalandPlastic = false;
-            }
-            else if (transform.parent.name == "Plastic" && other.name == "Beer")
-            {
-                collections.RemoveFromBeach("Cooler");
-            }
+        //If gameObject is Plastic (plastic box or container)
+        if (transform.parent.name == "Plastic" && other.name == "CD")
+        {
+            plasticandCD = false;
+        }
+        else if (transform.parent.name == "Plastic" && other.name == "Metal")
+        {
+            metalandPlastic = false;
+        }
+        else if (transform.parent.name == "Plastic" && other.name == "Beer")
+        {
+            collections.RemoveFromBeach("Cooler");
+        }
 
-            //If gameObject is Metal
-            if (transform.parent.name == "Metal" && other.name == "CD")
-            {
-                cdandMetal = false;
-            }
-            else if (transform.parent.name == "Metal" && other.name == "Plastic")
-            {
-                metalandPlastic = false;
-            }
-            else if (transform.parent.name == "Metal" && other.name == "Wire")
-            {
-                metalandWire = false;
-            }
+        //If gameObject is Metal
+        if (transform.parent.name == "Metal" && other.name == "CD")
+        {
+            cdandMetal = false;
+        }
+        else if (transform.parent.name == "Metal" && other.name == "Plastic")
+        {
+            metalandPlastic = false;
+        }
+        else if (transform.parent.name == "Metal" && other.name == "Wire")
+        {
+            metalandWire = false;
+        }
 
-            //If gameObject is Glass
-            if (transform.parent.name == "Glass" && other.name == "Fish")
-            {
-                collections.RemoveFromUnderwater("Aquarium");
-            }
+        //If gameObject is Glass
+        if (transform.parent.name == "Glass" && other.name == "Fish")
+        {
+            collections.RemoveFromUnderwater("Aquarium");
+        }
 
-            //If gameObject is Wire
-            else if (transform.parent.name == "Wire" && other.name == "Guitar")
-            {
-                collections.RemoveFromBeach("Guitar");
-            }
-            else if (transform.parent.name == "Wire" && other.name == "CD")
-            {
-                wireAndCD = false;
-            }
-            else if (transform.parent.name == "Wire" && other.name == "Metal")
-            {
-                metalandWire = false;
-            }
+        //If gameObject is Wire
+        else if (transform.parent.name == "Wire" && other.name == "Guitar")
+        {
+            collections.RemoveFromBeach("Guitar");
+        }
+        else if (transform.parent.name == "Wire" && other.name == "CD")
+        {
+            wireAndCD = false;
+        }
+        else if (transform.parent.name == "Wire" && other.name == "Metal")
+        {
+            metalandWire = false;
+        }
 
         //3 Artifact Combos
-        
+
         if ((!fishAndWood && !woodAndLighter) || (!lighterAndFish && !fishAndWood) || (!woodAndLighter && !lighterAndFish))
         {
             collections.RemoveFromBeach("Bonfire with Rack");
@@ -502,4 +512,3 @@ public class Artifact : MonoBehaviour
     }
 
 }
- 

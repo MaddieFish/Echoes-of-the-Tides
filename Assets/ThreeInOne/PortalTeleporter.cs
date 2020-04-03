@@ -12,9 +12,24 @@ public class PortalTeleporter : MonoBehaviour
     public bool playerIsOverlapping = false;
     public float dotProduct;
 
-    // Update is called once per frame
-    void Update()
+    private Rigidbody PailRB;
+
+    void Start()
     {
+        GameObject Pail = GameObject.Find("Pail Body Square");
+        if (Pail != null)
+        {
+            PailRB = Pail.GetComponent<Rigidbody>();
+        }
+    }
+    // Update is called once per frame
+    void LateUpdate()
+    {
+        if(PailRB.isKinematic == true)
+        {
+            PailRB.isKinematic = false;
+        }
+
         if (playerIsOverlapping)
         {
             Vector3 portalToPlayer = player.position - transform.position;
@@ -23,6 +38,7 @@ public class PortalTeleporter : MonoBehaviour
             //If this is true the player has moved across the portal
             if (dotProduct < 0f){
                 //teleport
+                PailRB.isKinematic = true;
                 float rotationDiff = Quaternion.Angle(transform.rotation, reciever.rotation);
                 rotationDiff += 180;
                 player.Rotate(Vector3.up, rotationDiff);
@@ -31,6 +47,7 @@ public class PortalTeleporter : MonoBehaviour
                 player.position = reciever.position + positionOffset;
 
                 playerIsOverlapping = false;
+                
             }
         }
     }
