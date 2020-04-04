@@ -74,11 +74,12 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        /*
         if (collections != null)
         {
             return;
         }
-
+        */
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish
@@ -330,14 +331,6 @@ public class Artifact : MonoBehaviour
         {
             groundCollision = true;
         }
-
-        //Hector's addition
-        /*
-        if (collections == null)
-        {
-            return;
-        }
-        */
 
         if (collections == null)
         {
