@@ -2376,7 +2376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axisValuesR: {x: 0, y: 0}
   axisValuesL: {x: 0, y: 0}
-  moveSpeed: 4
+  moveSpeed: 0.5
   rotSpeed: 50
   speedH: 2
   speedV: 2
@@ -2509,7 +2509,7 @@ Transform:
   m_Children:
   - {fileID: 1032962280}
   m_Father: {fileID: 1532122032}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90.198006, z: 0}
 --- !u!114 &591768476
 MonoBehaviour:
@@ -6246,8 +6246,8 @@ Transform:
   - {fileID: 2014853325}
   - {fileID: 1451980479}
   - {fileID: 1905092171}
-  - {fileID: 399017369}
   - {fileID: 591768475}
+  - {fileID: 399017369}
   - {fileID: 238620597}
   m_Father: {fileID: 0}
   m_RootOrder: 34

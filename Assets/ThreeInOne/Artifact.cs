@@ -80,6 +80,7 @@ public class Artifact : MonoBehaviour
             return;
         }
         */
+
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish

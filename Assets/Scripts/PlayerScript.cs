@@ -26,8 +26,8 @@ public class PlayerScript : MonoBehaviour
     public InputDevice RightController;
 
     //Test Camera Rotation
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    public float speedMouseH = 2.0f;
+    public float speedMouseV = 2.0f;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
@@ -41,10 +41,12 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InputDevices.deviceConnected += SetupControllers;
+
         //rb = GetComponent<Rigidbody>();
         var inputDevices = new List<InputDevice>();
         InputDevices.GetDevices(inputDevices);
-        //Nake sure headset is worn or you trigger the sensor
+
         foreach (var device in inputDevices)
         {
             Debug.Log(device.name);
@@ -61,6 +63,20 @@ public class PlayerScript : MonoBehaviour
                 RightController = device;
             }
             //Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, deviceChar.ToString()));
+        }
+    }
+    private void SetupControllers(InputDevice device)
+    {
+        if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left))
+        {
+            Debug.Log("Found Left Controller");
+            LeftController = device;
+        }
+
+        if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right))
+        {
+            Debug.Log("Found Right Controller");
+            RightController = device;
         }
     }
 
@@ -96,24 +112,19 @@ public class PlayerScript : MonoBehaviour
         LeftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesL);
         Debug.Log(axisValuesL);
 
+        /*
         var hLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickHorizontal");
         var vLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickVertical");
         var hRightThumb = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickHorizontal");
         var vRightThumb = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickVertical");
-
-
-        /*
-        transform.eulerAngles = new Vector3(0, centreEye.transform.localEulerAngles.y, 0);
-
-        
-        transform.Translate(Vector3.forward * moveSpeed * axisValues.y * Time.deltaTime);
-        transform.Translate(Vector3.right * moveSpeed * axisValues.x * Time.deltaTime);
-
-        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
         */
 
-        transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+        //transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+
+        //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
+        transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * axisValuesL.y) * moveSpeed, Vector3.up);
+        transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.right * axisValuesL.x) * moveSpeed, Vector3.up);
 
         //transform.Rotate(0, hLeftThumb * Time.deltaTime * rotSpeed, 0);
         //transform.Translate(0, 0, vLeftThumb * Time.deltaTime * moveSpeed);
@@ -141,15 +152,22 @@ public class PlayerScript : MonoBehaviour
         //transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed)
 
         transform.Rotate(0, Input.GetAxis("HorizontalL") * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
+        transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * Input.GetAxis("VerticalL")) * moveSpeed, Vector3.up);
+
+        //transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
 
     }
 
     void MouseCameraRotation()
     {
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+        yaw += speedMouseH * Input.GetAxis("Mouse X");
+        pitch -= speedMouseV * Input.GetAxis("Mouse Y");
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+    }
+
+    private void OnDisable()
+    {
+        InputDevices.deviceConnected -= SetupControllers;
     }
 }
