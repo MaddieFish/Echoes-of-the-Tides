@@ -46,12 +46,17 @@ public class Artifact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        collections = ground.GetComponent<Collections>();
+        if (ground != null)
+        {
+            collections = ground.GetComponent<Collections>();
+        }
+        if (collections != null)
+        {
+            beachRecCollections = collections.beachRecCollections;
+            underWaterCollections = collections.underWaterCollections;
+            artifactsPlaced = collections.artifacts;
+        }
 
-        beachRecCollections = collections.beachRecCollections;
-        underWaterCollections = collections.underWaterCollections;
-        artifactsPlaced = collections.artifacts;
-      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,7 +74,11 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
- 
+        if (collections != null)
+        {
+            return;
+        }
+
         if (artifactsPlaced.Contains(other.gameObject) && artifactsPlaced.Contains(transform.parent.gameObject))
         {
             //If gameObject is Fish
@@ -322,8 +331,21 @@ public class Artifact : MonoBehaviour
             groundCollision = true;
         }
 
-            //If gameObject is Fish
-            if (transform.parent.name == "Fish" && other.name == "Wood")
+        //Hector's addition
+        /*
+        if (collections == null)
+        {
+            return;
+        }
+        */
+
+        if (collections == null)
+        {
+            return;
+        }
+
+        //If gameObject is Fish
+        if (transform.parent.name == "Fish" && other.name == "Wood")
                 {
                 collections.RemoveFromUnderwater("Sunken Ship");
                 fishAndWood = false;
