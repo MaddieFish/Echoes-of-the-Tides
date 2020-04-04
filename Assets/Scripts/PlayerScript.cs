@@ -132,7 +132,7 @@ public class PlayerScript : MonoBehaviour
 
         //transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
 
-        transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
+        //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * axisValuesL.y) * moveSpeed, Vector3.up);
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.right * axisValuesL.x) * moveSpeed, Vector3.up);
         //transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
@@ -158,8 +158,12 @@ public class PlayerScript : MonoBehaviour
         //Movement through transform
         //transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0, Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed)
 
+        //transform.Rotate(0, Input.GetAxis("HorizontalL") * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
+
         transform.Rotate(0, Input.GetAxis("HorizontalL") * Time.deltaTime * rotSpeed, 0);
-        transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
+        transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * Input.GetAxis("VerticalL")) * moveSpeed, Vector3.up);
+        //transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.right * Input.GetAxis("HorizontalL")) * moveSpeed, Vector3.up);
 
     }
 
