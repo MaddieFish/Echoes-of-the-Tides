@@ -37,6 +37,10 @@ public class PlayerScript : MonoBehaviour
     public bool keyboardControls;
     public bool mouseCameraRotation;
 
+    public bool freezePlayerMovement;
+
+    public GameObject menuScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +87,18 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        freezePlayerMovement = menuScript.GetComponent<UIManager>().freezePlayerMovement;
+
+        if (freezePlayerMovement)
+        {
+            xrController = false;
+            keyboardControls = false;
+        } 
+        else
+        {
+            xrController = true;
+            keyboardControls = true;
+        }
 
         if (xrController == true)
         {

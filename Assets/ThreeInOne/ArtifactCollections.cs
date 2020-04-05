@@ -73,13 +73,14 @@ public class ArtifactCollections : MonoBehaviour
                 col.transform.SetParent(transform);
 
                 col.transform.position = artifactSpawner.position;
-
+   
                 if (col.attachedRigidbody.isKinematic == false)
                 {
                     col.attachedRigidbody.isKinematic = true;
 
                     //StartCoroutine(KinematicCoroutine(col));
                 }
+                
 
                 ArtifactInventoryToggle(col);
 
@@ -89,6 +90,7 @@ public class ArtifactCollections : MonoBehaviour
 
     }
   
+    /*
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.CompareTag("Artifact") == true)
@@ -96,15 +98,11 @@ public class ArtifactCollections : MonoBehaviour
             col.transform.parent = transform;
             col.transform.SetParent(transform);
 
-            //col.transform.position = artifactSpawner.position;
-
-            //Physics.IgnoreCollision(col.GetComponent<Collider>(), GetComponent<Collider>());
-
             //ArtifactInventoryToggle(col);
         }
 
     }
- 
+    */
     
     void OnTriggerExit(Collider col)
     {
@@ -112,10 +110,20 @@ public class ArtifactCollections : MonoBehaviour
         {
             collectedArtifacts.Remove(col.gameObject);
             print("You removed the " + col.transform.name);
-            col.transform.parent = null;
-            col.transform.SetParent(null);
 
-            col.attachedRigidbody.isKinematic = false;
+            if (col.attachedRigidbody.isKinematic == true)
+            {
+                col.attachedRigidbody.isKinematic = false;
+
+            }
+
+            if (col.transform.parent != null)
+            {
+                col.transform.parent = null;
+                col.transform.SetParent(null);
+            }
+
+            //col.attachedRigidbody.isKinematic = false;
 
             //col.gameObject.SetActive(true);
 

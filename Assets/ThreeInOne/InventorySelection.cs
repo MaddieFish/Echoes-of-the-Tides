@@ -14,6 +14,10 @@ public class InventorySelection : MonoBehaviour
     public GameObject currentItem;
     public GameObject passedItem;
 
+    public GameObject inventoryUI;
+    public GameObject arrowLeftUI;
+    public GameObject arrowRightUI;
+
     public bool enableCycle;
 
     public int _currentItemIndex = 0;
@@ -61,6 +65,9 @@ public class InventorySelection : MonoBehaviour
                     passedItem = currentItem;
                     SelectItem(index);
                     //DeselectItem(index);
+
+                    arrowLeftUI.GetComponent<ButtonImageSwitch>().OnSelect();
+
                     print("cycled back");
                     //Input.ResetInputAxes();
                     StartCoroutine("DelayCoroutine");
@@ -74,8 +81,16 @@ public class InventorySelection : MonoBehaviour
                     index = _currentItemIndex == collectedArtifacts.Count - 1 ? 0 : _currentItemIndex + 1;
                     SelectItem(index);
                     //DeselectItem(index);
+
+                    arrowRightUI.GetComponent<ButtonImageSwitch>().OnSelect();
+
                     print("cycled forward");
                     StartCoroutine("DelayCoroutine");
+                }
+                else
+                {
+                    arrowLeftUI.GetComponent<ButtonImageSwitch>().OnDeselect();
+                    arrowRightUI.GetComponent<ButtonImageSwitch>().OnDeselect();
                 }
             }
         }
@@ -108,11 +123,13 @@ public class InventorySelection : MonoBehaviour
     public void EnableCycleThroughInventory()
     {
         enableCycle = true;
+        inventoryUI.SetActive(true);
     }
 
     public void DisableCycleThroughInventory()
     {
         enableCycle = false;
+        inventoryUI.SetActive(false);
     }
 
 }
