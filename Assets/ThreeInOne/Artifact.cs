@@ -88,7 +88,7 @@ public class Artifact : MonoBehaviour
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
-                collections.AddToUnderwater("Sunken Ship");
+                //collections.AddToUnderwater("Sunken Ship");
 
                 fishAndWood = true;
             } 
@@ -100,13 +100,17 @@ public class Artifact : MonoBehaviour
             {
                 lighterAndFish = true;
             }
+            else if (transform.parent.name == "Fish" && other.name == "Glass")
+            {
+                collections.AddToUnderwater("Aquarium");
+            }
 
             //If gameObject is Wood
             if (transform.parent.name == "Wood" && other.name == "Fish")
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
-                collections.AddToUnderwater("Sunken Ship");
+                //collections.AddToUnderwater("Sunken Ship");
 
                 fishAndWood = true;
             }
@@ -124,17 +128,17 @@ public class Artifact : MonoBehaviour
 
                 collections.AddToBeach("Bonfire");
             }
-            else if (transform.parent.name == "Wood" && other.name == "Glass")
-            {
-                print(transform.parent.name + " is in proximity of " + other.name);
-
-                collections.AddToUnderwater("Aquarium");
-            }
             else if (transform.parent.name == "Wood" && other.name == "Wire")
             {
                 print(transform.parent.name + " is in proximity of " + other.name);
 
                 collections.AddToBeach("Guitar");
+            }
+            else if (transform.parent.name == "Wood" && other.name == "Metal")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                collections.AddToUnderwater("Sunken Ship");
             }
 
             //If gameObject is Beer
@@ -263,6 +267,12 @@ public class Artifact : MonoBehaviour
 
                 metalandWire = true;
             }
+            else if (transform.parent.name == "Metal" && other.name == "Wood")
+            {
+                print(transform.parent.name + " is in proximity of " + other.name);
+
+                collections.AddToUnderwater("Sunken Ship");
+            }
 
             //If gameObject is Glass
             if (transform.parent.name == "Glass" && other.name == "Fish")
@@ -301,12 +311,12 @@ public class Artifact : MonoBehaviour
            
             if ((cdandMetal && metalandPlastic) || (plasticandCD && cdandMetal) || (metalandPlastic && plasticandCD))
             {
-                collections.AddToBeach("Stereo");
+                collections.AddToBeach("StereoV2");
             }
 
             if ((cdandMetal && metalandWire) || (wireAndCD && cdandMetal) || (metalandWire && wireAndCD))
             {
-                collections.AddToBeach("Stereo");
+                collections.AddToBeach("StereoV1");
             }
 
             /*
@@ -341,7 +351,7 @@ public class Artifact : MonoBehaviour
         //If gameObject is Fish
         if (transform.parent.name == "Fish" && other.name == "Wood")
                 {
-                collections.RemoveFromUnderwater("Sunken Ship");
+                //collections.RemoveFromUnderwater("Sunken Ship");
                 fishAndWood = false;
             }
             else if (transform.parent.name == "Fish" && other.name == "Beer")
@@ -352,11 +362,15 @@ public class Artifact : MonoBehaviour
             {
                 lighterAndFish = false;
             }
+            else if (transform.parent.name == "Fish" && other.name == "Glass")
+            {
+                collections.RemoveFromUnderwater("Aquarium");
+            }
 
         //If gameObject is Wood
         if (transform.parent.name == "Wood" && other.name == "Fish")
             {
-                collections.RemoveFromUnderwater("Sunken Ship");
+                //collections.RemoveFromUnderwater("Sunken Ship");
                 fishAndWood = false;
             }
             else if (transform.parent.name == "Wood" && other.name == "Beer")
@@ -368,17 +382,17 @@ public class Artifact : MonoBehaviour
                 woodAndLighter = false;
                 collections.RemoveFromBeach("Bonfire");
             }
-            else if (transform.parent.name == "Wood" && other.name == "Glass")
-            {
-                collections.RemoveFromUnderwater("Aquarium");
-            }
             else if (transform.parent.name == "Wood" && other.name == "Wire")
             {
                 collections.RemoveFromBeach("Guitar");
             }
+            else if (transform.parent.name == "Wood" && other.name == "Metal")
+            {
+                collections.RemoveFromUnderwater("Sunken Ship");
+            }
 
-            //If gameObject is Beer
-            if (transform.parent.name == "Beer" && other.name == "Fish")
+        //If gameObject is Beer
+        if (transform.parent.name == "Beer" && other.name == "Fish")
             {
                 collections.RemoveFromUnderwater("Strangled Fish");
 
@@ -470,6 +484,10 @@ public class Artifact : MonoBehaviour
             {
                 metalandWire = false;
             }
+            else if (transform.parent.name == "Metal" && other.name == "Wood")
+            {
+                collections.RemoveFromUnderwater("Sunken Ship");
+            }
 
             //If gameObject is Glass
             if (transform.parent.name == "Glass" && other.name == "Fish")
@@ -500,12 +518,12 @@ public class Artifact : MonoBehaviour
 
         if ((!cdandMetal && !metalandPlastic) || (!plasticandCD && cdandMetal) || (!metalandPlastic && plasticandCD))
         {
-            collections.RemoveFromBeach("Stereo");
+            collections.RemoveFromBeach("StereoV2");
         }
 
         if ((!cdandMetal && metalandWire) || (!wireAndCD && !cdandMetal) || (!metalandWire && !wireAndCD))
         {
-            collections.RemoveFromBeach("Stereo");
+            collections.RemoveFromBeach("StereoV1");
         }
 
         /*

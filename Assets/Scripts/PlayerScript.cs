@@ -10,16 +10,12 @@ public class PlayerScript : MonoBehaviour
     //Movement
     public Vector2 axisValuesR;
     public Vector2 axisValuesL;
-
+  
+    public bool yButton;
+    public bool xButton;
 
     public float moveSpeed = 5.0f;
     public float rotSpeed = 200.0f;
-    //public GameObject pObject;
-    //public GameObject centreEye;
-
-
-
-    //public Rigidbody rb;
 
     //XR Controller Devuces
     public InputDevice LeftController;
@@ -40,6 +36,7 @@ public class PlayerScript : MonoBehaviour
     public bool freezePlayerMovement;
 
     public GameObject menuScript;
+    public bool collectionsList;
 
 
     // Start is called before the first frame update
@@ -88,6 +85,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         freezePlayerMovement = menuScript.GetComponent<UIManager>().freezePlayerMovement;
+        collectionsList = menuScript.GetComponent<UIManager>().collectionOpen;
 
         if (freezePlayerMovement)
         {
@@ -128,6 +126,12 @@ public class PlayerScript : MonoBehaviour
         LeftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValuesL);
         Debug.Log(axisValuesL);
 
+        LeftController.TryGetFeatureValue(CommonUsages.primaryButton, out xButton);
+        Debug.Log(xButton);
+
+        LeftController.TryGetFeatureValue(CommonUsages.secondaryButton, out yButton);
+        Debug.Log(yButton);
+
         /*
         var hLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickHorizontal");
         var vLeftThumb = Input.GetAxis("Oculus_CrossPlatform_PrimaryThumbstickVertical");
@@ -137,18 +141,26 @@ public class PlayerScript : MonoBehaviour
 
         //transform.Rotate(0, axisValuesL.x * Time.deltaTime * rotSpeed, 0);
         //transform.Translate(0, 0, axisValuesL.y * Time.deltaTime * moveSpeed);
+        //transform.Rotate(0, hLeftThumb * Time.deltaTime * rotSpeed, 0);
+        //transform.Translate(0, 0, vLeftThumb * Time.deltaTime * moveSpeed);
 
         //transform.Rotate(0, axisValuesR.x * Time.deltaTime * rotSpeed, 0);
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * axisValuesL.y) * moveSpeed, Vector3.up);
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.right * axisValuesL.x) * moveSpeed, Vector3.up);
 
-        //transform.Rotate(0, hLeftThumb * Time.deltaTime * rotSpeed, 0);
-        //transform.Translate(0, 0, vLeftThumb * Time.deltaTime * moveSpeed);
+        if (xButton)
+        {
+            menuScript.GetComponent<UIManager>().OpenMenu();
+        }
 
-
-        //transform.Translate(-Camera.main.transform.right * moveSpeed * vLeftThumb * Time.deltaTime);
-
-        //transform.Translate(-Camera.main.transform.right * moveSpeed * axisValuesL.y * Time.deltaTime);
+        if (yButton)
+        {
+            menuScript.GetComponent<UIManager>().OpenCollectionList();
+        }
+        else if (yButton && collectionsList)
+        {
+            menuScript.GetComponent<UIManager>().CloseCollectionList();
+        }
 
     }
 
@@ -171,6 +183,20 @@ public class PlayerScript : MonoBehaviour
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * Input.GetAxis("VerticalL")) * moveSpeed, Vector3.up);
 
         //transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            menuScript.GetComponent<UIManager>().OpenMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            menuScript.GetComponent<UIManager>().OpenCollectionList();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && collectionsList)
+        {
+            menuScript.GetComponent<UIManager>().CloseCollectionList();
+        }
 
     }
 

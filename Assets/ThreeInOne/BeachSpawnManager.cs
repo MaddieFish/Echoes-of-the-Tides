@@ -133,12 +133,12 @@ public class BeachSpawnManager : MonoBehaviour
         }
 
         //Stereo Spawn
-        if (beachRecCollections.Contains("Stereo") == true && stereoPlaced == false)
+        if ((beachRecCollections.Contains("StereoV1") == true || beachRecCollections.Contains("StereoV2") == true) && stereoPlaced == false)
         {
             stereoPlaced = true;
             stereo.SetActive(true);
         }
-        else if (stereoPlaced == true && beachRecCollections.Contains("Stereo") == false)
+        else if (stereoPlaced == true && (beachRecCollections.Contains("StereoV1") == false || beachRecCollections.Contains("StereoV2") == false))
         {
             stereoPlaced = false;
             stereo.SetActive(false);

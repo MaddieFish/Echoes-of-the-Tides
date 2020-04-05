@@ -586,13 +586,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axisValuesR: {x: 0, y: 0}
   axisValuesL: {x: 0, y: 0}
+  yButton: 0
+  xButton: 0
   moveSpeed: 3
   rotSpeed: 200
-  speedH: 2
-  speedV: 2
+  speedMouseH: 2
+  speedMouseV: 2
   xrController: 0
   keyboardControls: 1
   mouseCameraRotation: 0
+  freezePlayerMovement: 0
+  menuScript: {fileID: 0}
 --- !u!1 &2572209089010415611
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,13 +645,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axisValuesR: {x: 0, y: 0}
   axisValuesL: {x: 0, y: 0}
+  yButton: 0
+  xButton: 0
   moveSpeed: 5
   rotSpeed: 200
-  speedH: 2
-  speedV: 2
+  speedMouseH: 2
+  speedMouseV: 2
   xrController: 0
   keyboardControls: 0
   mouseCameraRotation: 0
+  freezePlayerMovement: 0
+  menuScript: {fileID: 0}
 --- !u!1 &2572209089746991386
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,8 +862,15 @@ MonoBehaviour:
   beachRecCollections: []
   artifactSpawner: {fileID: 0}
   strangledFish: 0
-  bonfire: 0
+  strangledTurtle: 0
   sunkenShip: 0
+  aquarium: 0
+  bonfire: 0
+  guitar: 0
+  cooler: 0
+  turtleHatching: 0
+  bonfireWithRack: 0
+  stereo: 0
   toUnderwaterWorld: {fileID: 0}
   toBeachRecWorld: {fileID: 0}
   currentItem: {fileID: 0}
