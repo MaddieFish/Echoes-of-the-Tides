@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public bool freezePlayerMovement = true;
-    public bool collectionOpen;
+    public bool collectionOpen = false;
 
     public GameObject MainMenu;
     public GameObject CollectionList;

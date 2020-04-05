@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour
     public bool freezePlayerMovement;
 
     public GameObject menuScript;
-    public bool collectionsList;
+    public bool collectionsOpen;
 
 
     // Start is called before the first frame update
@@ -85,7 +85,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         freezePlayerMovement = menuScript.GetComponent<UIManager>().freezePlayerMovement;
-        collectionsList = menuScript.GetComponent<UIManager>().collectionOpen;
+        collectionsOpen = menuScript.GetComponent<UIManager>().collectionOpen;
 
         if (freezePlayerMovement)
         {
@@ -153,11 +153,11 @@ public class PlayerScript : MonoBehaviour
             menuScript.GetComponent<UIManager>().OpenMenu();
         }
 
-        if (yButton)
+        if (yButton && !collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().OpenCollectionList();
         }
-        else if (yButton && collectionsList)
+        else if (yButton && collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().CloseCollectionList();
         }
@@ -189,11 +189,11 @@ public class PlayerScript : MonoBehaviour
             menuScript.GetComponent<UIManager>().OpenMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().OpenCollectionList();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && collectionsList)
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().CloseCollectionList();
         }
