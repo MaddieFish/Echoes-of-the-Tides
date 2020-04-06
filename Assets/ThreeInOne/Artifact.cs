@@ -43,6 +43,9 @@ public class Artifact : MonoBehaviour
     public bool metalandWire;
     public bool wireAndCD;
 
+    public int collisionCount = 0;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -55,6 +58,23 @@ public class Artifact : MonoBehaviour
             beachRecCollections = collections.beachRecCollections;
             underWaterCollections = collections.underWaterCollections;
             artifactsPlaced = collections.artifacts;
+        }
+
+        if (collisionCount <= 0 && gameObject.GetComponentInParent<Rigidbody>().isKinematic == true)
+        {
+            gameObject.GetComponentInParent<Rigidbody>().isKinematic = false;
+
+            //collisionCount = 0;
+
+            //gameObject.parent.GetComponent<Rigidbody>().isKinematic = false;
+            print("kinematic state change");
+
+            /*
+            if (gameObject.GetComponentInParent<Rigidbody>().isKinematic == true)
+            {
+                gameObject.GetComponentInParent<Rigidbody>().isKinematic = false;
+            }
+            */
         }
 
     }
@@ -70,6 +90,12 @@ public class Artifact : MonoBehaviour
         {
             groundCollision = false;
         }
+
+        if(other.name == "Pail Body Square")
+        {
+            collisionCount++;
+        }
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -332,8 +358,14 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.name == "Pail Body Square")
+        {
+            collisionCount--;
+        }
+
         if (other.gameObject.name == "Pail Body Square")
         {
+            print("kinematic state change");
             if (gameObject.GetComponentInParent<Rigidbody>().isKinematic == true)
             gameObject.GetComponentInParent<Rigidbody>().isKinematic = false;
         }
