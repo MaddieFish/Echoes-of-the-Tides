@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4165857300702806322}
   - component: {fileID: 2392077111681800311}
   - component: {fileID: 7000847594007264263}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3080693556190520821}
   - component: {fileID: 7376497514434283133}
   - component: {fileID: 8969644250764772529}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bonfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 6630317139820292502}
   - component: {fileID: 3971793708403324288}
   - component: {fileID: 3971793708403324289}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Bonfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.47786304
       objectReference: {fileID: 0}
+    - target: {fileID: 1774415890240746949, guid: 78f726e9a6eeea042a0e4171b93f91ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1774415890240746950, guid: 78f726e9a6eeea042a0e4171b93f91ac,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -370,10 +375,20 @@ PrefabInstance:
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1774415890442763143, guid: 78f726e9a6eeea042a0e4171b93f91ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1774415890731758002, guid: 78f726e9a6eeea042a0e4171b93f91ac,
         type: 3}
       propertyPath: m_Name
       value: fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774415890731758002, guid: 78f726e9a6eeea042a0e4171b93f91ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1774415890731758003, guid: 78f726e9a6eeea042a0e4171b93f91ac,
         type: 3}
@@ -449,6 +464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
       value: 2.3510647e-38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774415890896920474, guid: 78f726e9a6eeea042a0e4171b93f91ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1774415890896920475, guid: 78f726e9a6eeea042a0e4171b93f91ac,
         type: 3}
