@@ -377,18 +377,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8630490640300399247}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &164135830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3540826287667277626, guid: 8d1779fe333233142925486510278cf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1077109278}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &173054707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2264,7 +2252,7 @@ MonoBehaviour:
   axisValuesL: {x: 0, y: 0}
   yButton: 0
   xButton: 0
-  moveSpeed: 0.1
+  moveSpeed: 0.2
   rotSpeed: 50
   speedMouseH: 2
   speedMouseV: 2
@@ -8884,7 +8872,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 260919
   m_AttachTransform: {fileID: 0}
-  m_StartingSelectedInteractable: {fileID: 164135830}
+  m_StartingSelectedInteractable: {fileID: 0}
   m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
