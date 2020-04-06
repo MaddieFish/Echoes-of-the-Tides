@@ -43,8 +43,10 @@ public class ArtifactCollections : MonoBehaviour
     public bool underwaterPortalIsCreated;
     public bool beachRecPortalIsCreated;
 
-    Scene currentScene;
-    
+    public AudioSource objectCollected;
+    public AudioClip metalicRing;
+    public AudioClip thud;
+
     void Start()
     {
         toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
@@ -81,9 +83,18 @@ public class ArtifactCollections : MonoBehaviour
                     //StartCoroutine(KinematicCoroutine(col));
                 }
                 
-
                 ArtifactInventoryToggle(col);
-
+                /*
+                if (col.transform.parent.name == "Beer" || col.transform.parent.name == "CD" || col.transform.parent.name == "Metal" || col.transform.parent.name == "Glass")
+                {
+                    objectCollected.clip = metalicRing;
+                }
+                else if (col.transform.parent.name == "Plastic" || col.transform.parent.name == "Turtle Egg" || col.transform.parent.name == "Lighter" || col.transform.parent.name == "Fish" || col.transform.parent.name == "Wire")
+                {
+                    objectCollected.clip = thud;
+                }
+                objectCollected.Play();
+                */
             }
 
         }
