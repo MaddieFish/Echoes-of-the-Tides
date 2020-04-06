@@ -122,6 +122,7 @@ public class ArtifactCollections : MonoBehaviour
             collectedArtifacts.Remove(col.gameObject);
             print("You removed the " + col.transform.name);
 
+            /*
             if (col.attachedRigidbody.isKinematic == true)
             {
                 col.attachedRigidbody.isKinematic = false;
@@ -133,6 +134,7 @@ public class ArtifactCollections : MonoBehaviour
                 col.transform.parent = null;
                 col.transform.SetParent(null);
             }
+            */
 
             //col.attachedRigidbody.isKinematic = false;
 
