@@ -148,7 +148,7 @@ public class PlayerScript : MonoBehaviour
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.forward * axisValuesL.y) * moveSpeed, Vector3.up);
         transform.position = transform.position + Vector3.ProjectOnPlane((Camera.main.transform.right * axisValuesL.x) * moveSpeed, Vector3.up);
 
-        if (xButton)
+        if (xButton && !collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().OpenMenu();
         }
@@ -184,7 +184,7 @@ public class PlayerScript : MonoBehaviour
 
         //transform.Translate(0, 0, Input.GetAxis("VerticalL") * Time.deltaTime * moveSpeed);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !collectionsOpen)
         {
             menuScript.GetComponent<UIManager>().OpenMenu();
         }
