@@ -332,6 +332,12 @@ public class Artifact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.name == "Pail Body Square")
+        {
+            if (gameObject.GetComponentInParent<Rigidbody>().isKinematic == true)
+            gameObject.GetComponentInParent<Rigidbody>().isKinematic = false;
+        }
+
         if (ground != null && other.CompareTag("Ground"))
         {
             groundCollision = false;

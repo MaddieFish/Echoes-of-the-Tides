@@ -597,6 +597,7 @@ MonoBehaviour:
   mouseCameraRotation: 0
   freezePlayerMovement: 0
   menuScript: {fileID: 0}
+  collectionsOpen: 0
 --- !u!1 &2572209089010415611
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +657,7 @@ MonoBehaviour:
   mouseCameraRotation: 0
   freezePlayerMovement: 0
   menuScript: {fileID: 0}
+  collectionsOpen: 0
 --- !u!1 &2572209089746991386
 GameObject:
   m_ObjectHideFlags: 0
