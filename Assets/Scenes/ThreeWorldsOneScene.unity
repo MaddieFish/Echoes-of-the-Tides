@@ -734,9 +734,6 @@ MonoBehaviour:
   beachRecCollections: []
   underWaterScene: 0
   beachRecScene: 1
-  objectCollected: {fileID: 0}
-  metalicRing: {fileID: 0}
-  thud: {fileID: 0}
 --- !u!1 &193638387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6768427469954401792, guid: e785a1b397f6af04ca07dca8f42edba2,
@@ -2142,16 +2139,16 @@ VideoPlayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172669249589998}
-  m_Enabled: 0
-  m_VideoClip: {fileID: 32900000, guid: cbf9b3bde88734d4381a99c343086546, type: 3}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: a1af80fc7fc493b40a9a5edd2019f6ba, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: e4e3a217ce64cf44698e16a5ce94b1ce, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 3
+  m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
@@ -2166,7 +2163,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -4651,16 +4648,16 @@ VideoPlayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123122226}
-  m_Enabled: 0
-  m_VideoClip: {fileID: 32900000, guid: cbf9b3bde88734d4381a99c343086546, type: 3}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 087a66df899f1e142aa5415cf88971d1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 73357af585058fc4598ecc861ff42554, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 3
+  m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
@@ -4675,7 +4672,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -5373,9 +5370,6 @@ MonoBehaviour:
   beachRecCollections: []
   underWaterScene: 1
   beachRecScene: 0
-  objectCollected: {fileID: 0}
-  metalicRing: {fileID: 0}
-  thud: {fileID: 0}
 --- !u!1001 &1267338195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6291,7 +6285,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb914f66900bdff4b895e66b60426d09, type: 2}
+      objectReference: {fileID: 2100000, guid: 0bc3dfe93be06b347962082faf616c91, type: 2}
     - target: {fileID: -927199367670048503, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_Name
@@ -6329,11 +6323,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471579017}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d2729b4947014c74b932731b4b258b52, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: a42705913a721c1459b1dcc609532395, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 5c875d82c1d6d8b4b854e6135da73bbe, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 4e669e89076782149a56425124783c42, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
@@ -8174,22 +8168,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
@@ -8199,17 +8193,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
@@ -8230,7 +8224,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9ad50554cd3f66a4193fce56e554e330, type: 2}
+      objectReference: {fileID: 2100000, guid: 0f61b9511f1acc8489dc7e03c1090772, type: 2}
     - target: {fileID: -1504981713932161579, guid: cc88e6f02b609b34e892e994eb8cafdc,
         type: 3}
       propertyPath: m_CastShadows
@@ -10413,13 +10407,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172669249589998}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1894.729, y: 1601.44, z: 910.6315}
   m_LocalScale: {x: 57454.625, y: 57454.613, z: 57454.625}
   m_Children: []
   m_Father: {fileID: 30047465}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &5358367792979122404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10736,7 +10730,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 98ce9b7f8ed537f44a0c35b17ddc6563, type: 2}
+  - {fileID: 2100000, guid: 320494827606488408de905bfeb6dd8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
