@@ -4241,6 +4241,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1077109278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &975181724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3540826287667277626, guid: 8d1779fe333233142925486510278cf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1077109278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975181723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &989468297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8449222895829553937, guid: 71611ac35f0a02840bc86ca930cf3e11,
@@ -10702,7 +10714,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 260919
   m_AttachTransform: {fileID: 0}
-  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 975181724}
   m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -13299,7 +13311,7 @@ PrefabInstance:
     - target: {fileID: 4244453491313121119, guid: e785a1b397f6af04ca07dca8f42edba2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.18
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4244453491313121119, guid: e785a1b397f6af04ca07dca8f42edba2,
         type: 3}
