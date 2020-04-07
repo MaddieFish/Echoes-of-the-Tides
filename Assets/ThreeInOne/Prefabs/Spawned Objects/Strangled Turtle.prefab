@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5924985874773319626}
   - component: {fileID: 5353185396897386637}
   - component: {fileID: 1368907115793409054}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Strangled Turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4204698304616181289}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -223,6 +223,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4aa10fab6143d6842b42b80a612e1716,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -811572006098616923, guid: 4aa10fab6143d6842b42b80a612e1716,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa10fab6143d6842b42b80a612e1716, type: 3}
 --- !u!1 &6138545900617004133 stripped
@@ -244,6 +254,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4790324461670730295}
     m_Modifications:
+    - target: {fileID: -8869790349279917868, guid: e7ca4f601611ffa40aba0abd196099ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: -7460500176152628029, guid: e7ca4f601611ffa40aba0abd196099ac,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -373,6 +388,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e7ca4f601611ffa40aba0abd196099ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6994226140398696292, guid: e7ca4f601611ffa40aba0abd196099ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9188747580725545421, guid: e7ca4f601611ffa40aba0abd196099ac,
         type: 3}

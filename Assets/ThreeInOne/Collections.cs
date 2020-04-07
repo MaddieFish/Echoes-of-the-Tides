@@ -85,4 +85,13 @@ public class Collections : MonoBehaviour
 
         }
     }
+
+    public void removeCompleteCollections()
+    {
+        artifacts.Clear();
+        artifactsPlaced.Clear();
+        underWaterCollections.Clear();
+        beachRecCollections.Clear();
+       
+    }
 }

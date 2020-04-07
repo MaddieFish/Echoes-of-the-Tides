@@ -49,8 +49,8 @@ public class ArtifactCollections : MonoBehaviour
 
     void Start()
     {
-        toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
-        toBeachRecWorld = GameObject.Find("PortalToBeachRec360");
+        //toUnderwaterWorld = GameObject.Find("PortalToUnderwater360");
+        //toBeachRecWorld = GameObject.Find("PortalToBeachRec360");
 
         if (toUnderwaterWorld != null && toBeachRecWorld != null)
         {

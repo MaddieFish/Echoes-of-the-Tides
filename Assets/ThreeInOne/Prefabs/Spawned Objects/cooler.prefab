@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 25669127676553870}
   - component: {fileID: 25669127676553871}
   - component: {fileID: 2713537537305771961}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (5)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 584908997971270746}
   - component: {fileID: 584908997974662264}
   - component: {fileID: 584908997973565112}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 584908997971270748}
   - component: {fileID: 584908997974662266}
   - component: {fileID: 584908997973565114}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 889641530275093475}
   - component: {fileID: 889641530272193477}
   - component: {fileID: 889641530273192197}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 889641530275093477}
   - component: {fileID: 889641530272193479}
   - component: {fileID: 889641530273192199}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,9 +464,9 @@ GameObject:
   - component: {fileID: 2780906678791745054}
   - component: {fileID: 7200542416397206787}
   - component: {fileID: 7200542416397206785}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Plastic (1)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,9 +530,9 @@ GameObject:
   - component: {fileID: 2195703236915775890}
   - component: {fileID: 2195703236915775891}
   - component: {fileID: 4290779913534626981}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (4)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 8029721167782402659}
   - component: {fileID: 6946210599971921693}
   - component: {fileID: 7950481552491659001}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 2717946484234949168}
   - component: {fileID: 2717946484236276246}
   - component: {fileID: 2717946484237373654}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 2717946484234949174}
   - component: {fileID: 2717946484236276244}
   - component: {fileID: 2717946484237373652}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,9 +902,9 @@ GameObject:
   - component: {fileID: 3007138192038634333}
   - component: {fileID: 3007138192038634332}
   - component: {fileID: 885201058285991530}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (1)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,9 +1031,9 @@ GameObject:
   - component: {fileID: 3313848471806780642}
   - component: {fileID: 3313848471806780643}
   - component: {fileID: 580535870131876309}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 4099504492335757726}
   - component: {fileID: 343668531952506}
   - component: {fileID: 5197073202799504485}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1238,9 +1238,9 @@ GameObject:
   - component: {fileID: 1136838264721710419}
   - component: {fileID: 5385294352678827598}
   - component: {fileID: 5385294352678827596}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Plastic
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1301,7 +1301,7 @@ GameObject:
   - component: {fileID: 4295185511460909354}
   - component: {fileID: 4295185511464333576}
   - component: {fileID: 4295185511463334856}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 4295185511460909356}
   - component: {fileID: 4295185511464333578}
   - component: {fileID: 4295185511463334858}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1466,9 +1466,9 @@ GameObject:
   - component: {fileID: 4611843710783917795}
   - component: {fileID: 4611843710783917794}
   - component: {fileID: 7346446896513391572}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (6)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1590,7 +1590,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8551798814135438418}
-  m_Layer: 0
+  - component: {fileID: 8003173506760087951}
+  m_Layer: 18
   m_Name: cooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1624,6 +1625,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8003173506760087951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4680733624837914177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.6249814, y: 2.8356552, z: 5.7918224}
+  m_Center: {x: -0.5689362, y: 0.33187038, z: -0.3861465}
 --- !u!1 &4989775868231890639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744602404431654673}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1668,9 +1682,9 @@ GameObject:
   - component: {fileID: 5047557107768734670}
   - component: {fileID: 5047557107768734671}
   - component: {fileID: 7205719403405190905}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (3)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1797,9 +1811,9 @@ GameObject:
   - component: {fileID: 3857082352068922771}
   - component: {fileID: 3857082352068922769}
   - component: {fileID: 3857082352068922770}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Plastic 1
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1981,7 +1995,7 @@ GameObject:
   - component: {fileID: 6789337115518782267}
   - component: {fileID: 8948582535336243882}
   - component: {fileID: 6697832719741675279}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2062,7 +2076,7 @@ GameObject:
   - component: {fileID: 5565410609704264241}
   - component: {fileID: 5565410609705034259}
   - component: {fileID: 5565410609706164435}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2143,7 +2157,7 @@ GameObject:
   - component: {fileID: 5565410609704264247}
   - component: {fileID: 5565410609705034257}
   - component: {fileID: 5565410609706164433}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2238,7 @@ GameObject:
   - component: {fileID: 495555844264413544}
   - component: {fileID: 6645808363101301979}
   - component: {fileID: 1507813683974343979}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: cube001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2319,7 @@ GameObject:
   - component: {fileID: 7201152933718641520}
   - component: {fileID: 7201152933721508694}
   - component: {fileID: 7201152933720410518}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2386,7 +2400,7 @@ GameObject:
   - component: {fileID: 7201152933718641526}
   - component: {fileID: 7201152933721508692}
   - component: {fileID: 7201152933720410516}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2481,7 @@ GameObject:
   - component: {fileID: 7341900286336136795}
   - component: {fileID: 7341900286334809721}
   - component: {fileID: 7341900286333711545}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2548,7 +2562,7 @@ GameObject:
   - component: {fileID: 7341900286336136797}
   - component: {fileID: 7341900286334809723}
   - component: {fileID: 7341900286333711547}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: can_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2632,9 +2646,9 @@ GameObject:
   - component: {fileID: 7556876848515160713}
   - component: {fileID: 7556876848515160712}
   - component: {fileID: 5560879667432918974}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: Beer (2)
-  m_TagString: Artifact
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2758,7 +2772,7 @@ GameObject:
   - component: {fileID: 8604564287978272886}
   - component: {fileID: 6160607512460558823}
   - component: {fileID: 8476448345393157186}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2839,7 +2853,7 @@ GameObject:
   - component: {fileID: 3436685123088841253}
   - component: {fileID: 8461059725315973014}
   - component: {fileID: 4448935266256174694}
-  m_Layer: 9
+  m_Layer: 18
   m_Name: cube001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
